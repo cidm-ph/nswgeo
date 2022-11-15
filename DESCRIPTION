@@ -1,0 +1,36 @@
+Package: nswgeo
+Title: Geospatial Data and Maps for New South Wales, Australia
+Version: 0.3.0
+Authors@R: 
+    c(person(given = "Carl",
+             family = "Suster",
+             email = "Carl.Suster@health.nsw.gov.au",
+             role = c("aut", "cre"),
+             comment = c(ORCID = "0000-0001-7021-9380")),
+      person("Western Sydney Local Health District, NSW Health",
+             role = "cph"))
+Description: Geospatial data for creating maps of NSW.
+License: MIT + file LICENSE
+Copyright: file COPYRIGHTS
+Encoding: UTF-8
+Language: en-GB
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.2
+Remotes: github::cidm-ph/ggmapinset,
+         github::cidm-ph/ggautomap
+Depends: 
+    R (>= 2.10),
+    sf (>= 1.0)
+Imports: 
+    cli (>= 3.4.0),
+    rlang (>= 1.0.0),
+    ggmapinset (>= 0.1.1),
+    ggautomap (>= 0.1.0)
+Suggests: 
+    dplyr (>= 1.0.0),
+    nngeo,
+    readr,
+    stringr
+URL: https://github.com/cidm-ph/nswgeo
+BugReports: https://github.com/cidm-ph/nswgeo/issues
