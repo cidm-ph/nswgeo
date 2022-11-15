@@ -18,6 +18,7 @@ A data frame with 100 rows and the following columns:
 NSW Ministry of Health.
 "NSW COVID-19 cases by location."
 \url{https://data.nsw.gov.au/data/dataset/covid-19-cases-by-location}, accessed 11 October 2022.
+
 The original dataset is published under the \href{https://creativecommons.org/licenses/by/4.0/}{Creative Commons Attribution 4.0} licence, © State of New South Wales 2020-2022.
 }
 \usage{

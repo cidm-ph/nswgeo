@@ -10,6 +10,15 @@ This package contains geospatial data for the NSW border and several types
 of features. It also contains some map plotting helpers to help you get
 from a data frame to a plot for common scenarios.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/cidm-ph/nswgeo}
+  \item \url{https://cidm-ph.github.io/nswgeo/}
+  \item Report bugs at \url{https://github.com/cidm-ph/nswgeo/issues}
+}
+
+}
 \author{
 \strong{Maintainer}: Carl Suster \email{Carl.Suster@health.nsw.gov.au} (\href{https://orcid.org/0000-0001-7021-9380}{ORCID})
 

@@ -32,5 +32,6 @@ Suggests:
     nngeo,
     readr,
     stringr
-URL: https://github.com/cidm-ph/nswgeo
+URL: https://github.com/cidm-ph/nswgeo,
+    https://cidm-ph.github.io/nswgeo/
 BugReports: https://github.com/cidm-ph/nswgeo/issues

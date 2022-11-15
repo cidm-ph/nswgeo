@@ -12,6 +12,7 @@
 #'   Spatial Services, Department of Customer Service.
 #'   "NSW Administrative Boundaries Theme - Suburb."
 #'   \url{https://portal.spatial.nsw.gov.au/portal/home/item.html?id=38bdaa10b7cc41a3a19be6eca91f5368}, accessed 21 September 2022.
+#'
 #'   The original dataset is published under the Creative Commons Attribution 4.0 Australia licence, © Spatial Services 2021.
 "suburbs"
 
@@ -25,6 +26,7 @@
 #' @source
 #'   Australian Bureau of Statistics. "Australian Statistical Geography Standard (ASGS) Edition 3." ABS, Jul2021-Jun2026,
 #'   \url{https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026}, accessed 10 November 2022.
+#'
 #'   The original dataset is published under the [Creative Commons Attribution 4.0 International](http://creativecommons.org/licenses/by/4.0/) licence, © Commonwealth of Australia 2021.
 #'
 #' @describeIn australia External boundaries of Australia as a multipolygon.
@@ -42,6 +44,7 @@
 #' @source
 #'   Australian Bureau of Statistics. "Australian Statistical Geography Standard (ASGS) Edition 3." ABS, Jul2021-Jun2026,
 #'   \url{https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026}, accessed 27 September 2022.
+#'
 #'   The original dataset is published under the [Creative Commons Attribution 4.0 International](http://creativecommons.org/licenses/by/4.0/) licence, © Commonwealth of Australia 2021.
 #'
 #' @describeIn nsw External boundaries of New South Wales as a multipolygon.
@@ -69,5 +72,6 @@
 #'   NSW Ministry of Health.
 #'   "NSW COVID-19 cases by location."
 #'   \url{https://data.nsw.gov.au/data/dataset/covid-19-cases-by-location}, accessed 11 October 2022.
+#'
 #'   The original dataset is published under the [Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/) licence, © State of New South Wales 2020-2022.
 "covid_cases_nsw"

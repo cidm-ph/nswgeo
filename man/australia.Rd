@@ -13,6 +13,7 @@ An object of class \code{sf} (inherits from \code{tbl_df}, \code{tbl}, \code{dat
 \source{
 Australian Bureau of Statistics. "Australian Statistical Geography Standard (ASGS) Edition 3." ABS, Jul2021-Jun2026,
 \url{https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026}, accessed 10 November 2022.
+
 The original dataset is published under the \href{http://creativecommons.org/licenses/by/4.0/}{Creative Commons Attribution 4.0 International} licence, © Commonwealth of Australia 2021.
 }
 \usage{
