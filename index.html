@@ -103,7 +103,7 @@
 <span><span class="co">#&gt; 10 2768     Blacktown Western Sydney      2022 A    </span></span>
 <span><span class="co">#&gt; # … with 90 more rows</span></span></code></pre></div>
 <p>You need to let the package know which column has the feature by setting the <code>location</code> aesthetic. This example has three different columns of locations for different feature types; your dataset only needs to have one of these.</p>
-<p>In general you’ll start with <code><a href="https://cidm-ph.github.io/ggautomap/reference/boundaries.html" class="external-link">geom_boundaries()</a></code> to draw the base map. This geom needs to be told which <code>feature_type</code> you’re after (e.g. <code>"nswgeo.lga"</code> for LGAs). All of the summary geoms of <code>ggautomap</code> can then be used to draw your data.</p>
+<p>In general you’ll start with <code><a href="https://cidm-ph.github.io/ggautomap/reference/boundaries.html" class="external-link">geom_boundaries()</a></code> to draw the base map. This geom needs to be told which <code>feature_type</code> you’re after (e.g. <code>"nswgeo.lga"</code> for LGAs). All of the summary geoms of <a href="https://github.com/cidm-ph/ggautomap" class="external-link">ggautomap</a> can then be used to draw your data.</p>
 </div>
 <div class="section level2">
 <h2 id="scatter">Scatter<a class="anchor" aria-label="anchor" href="#scatter"></a>
@@ -120,7 +120,7 @@
 <div class="section level2">
 <h2 id="insets">Insets<a class="anchor" aria-label="anchor" href="#insets"></a>
 </h2>
-<p>To show a zoomed in part of the map as an inset, you can configure an inset and provide it to each relevant geom. The geoms all support <code>ggmapinset</code>.</p>
+<p>To show a zoomed in part of the map as an inset, you can configure an inset and provide it to each relevant geom. The geoms all support <a href="https://cidm-ph.github.io/ggmapinset/" class="external-link">ggmapinset</a>.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">inset_cfg</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://cidm-ph.github.io/ggautomap/reference/configure_inset.html" class="external-link">configure_inset</a></span><span class="op">(</span>centre <span class="op">=</span> <span class="st">"Blacktown"</span>, radius <span class="op">=</span> <span class="fl">40</span>, units <span class="op">=</span> <span class="st">"km"</span>,</span>
 <span>                             scale <span class="op">=</span> <span class="fl">7</span>, translation <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">400</span>, <span class="op">-</span><span class="fl">100</span><span class="op">)</span><span class="op">)</span></span>
@@ -138,7 +138,7 @@
 <div class="section level2">
 <h2 id="packed-points">Packed points<a class="anchor" aria-label="anchor" href="#packed-points"></a>
 </h2>
-<p>This next example uses <code><a href="https://cidm-ph.github.io/ggautomap/reference/centroids.html" class="external-link">geom_centroids()</a></code> to place the points in a packed circle in the centre of each feature. It also shows how you can fine-tune the plot with the usual <code>ggplot</code> functions.</p>
+<p>This next example uses <code><a href="https://cidm-ph.github.io/ggautomap/reference/centroids.html" class="external-link">geom_centroids()</a></code> to place the points in a packed circle in the centre of each feature. It also shows how you can fine-tune the plot with the usual <a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a> functions.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">inset_cfg</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://cidm-ph.github.io/ggautomap/reference/configure_inset.html" class="external-link">configure_inset</a></span><span class="op">(</span>centre <span class="op">=</span> <span class="st">"Western Sydney"</span>, radius <span class="op">=</span> <span class="fl">35</span>, units <span class="op">=</span> <span class="st">"km"</span>,</span>
 <span>                             scale <span class="op">=</span> <span class="fl">8</span>, translation <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">450</span>, <span class="op">-</span><span class="fl">100</span><span class="op">)</span><span class="op">)</span></span>
@@ -187,7 +187,7 @@
 <div class="section level2">
 <h2 id="pies-and-australia">Pies and Australia<a class="anchor" aria-label="anchor" href="#pies-and-australia"></a>
 </h2>
-<p>The <code>"nswgeo.states"</code> map data includes the other states for national summaries. This example also shows <code><a href="https://cidm-ph.github.io/ggautomap/reference/geom_pie.html" class="external-link">geom_pie()</a></code>, which aggregates points in each location.</p>
+<p>The <code>"nswgeo.states"</code> map data includes the other states for national summaries. Both the abbreviated state names (e.g. <code>"NSW"</code>) and the full names (e.g. <code>"New South Wales"</code>) are supported in the <code>location</code> aesthetic. This example also shows <code><a href="https://cidm-ph.github.io/ggautomap/reference/geom_pie.html" class="external-link">geom_pie()</a></code>, which aggregates points in each location.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">national_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>state <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"qld"</span>, <span class="st">"nsw"</span>, <span class="st">"vic"</span>, <span class="st">"sa"</span>, <span class="st">"act"</span><span class="op">)</span>,</span>
 <span>                                           size <span class="op">=</span> <span class="fl">1000</span>, replace <span class="op">=</span> <span class="cn">TRUE</span>,</span>
@@ -196,7 +196,6 @@
 <span>                                          size <span class="op">=</span> <span class="fl">1000</span>, replace <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>                                          prob <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.3</span>, <span class="fl">0.6</span>, <span class="fl">0.1</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">national_data</span><span class="op">$</span><span class="va">type</span><span class="op">[</span><span class="va">national_data</span><span class="op">$</span><span class="va">state</span> <span class="op">==</span> <span class="st">"act"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"A"</span></span>
-<span><span class="va">national_data</span><span class="op">$</span><span class="va">state</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/expand_state_names.html">expand_state_names</a></span><span class="op">(</span><span class="va">national_data</span><span class="op">$</span><span class="va">state</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">national_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>location <span class="op">=</span> <span class="va">state</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
