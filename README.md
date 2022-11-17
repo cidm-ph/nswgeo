@@ -64,8 +64,8 @@ one of these.
 
 In general you’ll start with `geom_boundaries()` to draw the base map.
 This geom needs to be told which `feature_type` you’re after
-(e.g. `"nswgeo.lga"` for LGAs). All of the summary geoms of `ggautomap`
-can then be used to draw your data.
+(e.g. `"nswgeo.lga"` for LGAs). All of the summary geoms of
+`{ggautomap}` can then be used to draw your data.
 
 ## Scatter
 
@@ -87,7 +87,7 @@ that automatically crops the map around your data points.
 
 To show a zoomed in part of the map as an inset, you can configure an
 inset and provide it to each relevant geom. The geoms all support
-`ggmapinset`.
+`{ggmapinset}`.
 
 ``` r
 inset_cfg <- configure_inset(centre = "Blacktown", radius = 40, units = "km",
@@ -109,7 +109,7 @@ covid_cases_nsw %>%
 
 This next example uses `geom_centroids()` to place the points in a
 packed circle in the centre of each feature. It also shows how you can
-fine-tune the plot with the usual `ggplot` functions.
+fine-tune the plot with the usual `{ggplot2}` functions.
 
 ``` r
 inset_cfg <- configure_inset(centre = "Western Sydney", radius = 35, units = "km",
@@ -162,7 +162,9 @@ covid_cases_nsw %>%
 ## Pies and Australia
 
 The `"nswgeo.states"` map data includes the other states for national
-summaries. This example also shows `geom_pie()`, which aggregates points
+summaries. Both the abbreviated state names (e.g. `"NSW"`) and the full
+names (e.g. `"New South Wales"`) are supported in the `location`
+aesthetic. This example also shows `geom_pie()`, which aggregates points
 in each location.
 
 ``` r
@@ -173,7 +175,6 @@ national_data <- data.frame(state = sample(c("qld", "nsw", "vic", "sa", "act"),
                                           size = 1000, replace = TRUE,
                                           prob = c(0.3, 0.6, 0.1)))
 national_data$type[national_data$state == "act"] <- "A"
-national_data$state <- expand_state_names(national_data$state)
 
 national_data %>%
   ggplot(aes(location = state)) +

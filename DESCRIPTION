@@ -26,7 +26,7 @@ Imports:
     cli (>= 3.4.0),
     rlang (>= 1.0.0),
     ggmapinset (>= 0.1.1),
-    ggautomap (>= 0.1.0)
+    ggautomap (> 0.1.0)
 Suggests: 
     dplyr (>= 1.0.0),
     nngeo,
