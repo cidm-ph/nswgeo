@@ -15,6 +15,7 @@ knitr::opts_chunk$set(
   out.width = "100%"
 )
 library(sf, quietly = TRUE)
+set.seed(2022)
 ```
 
 # nswgeo
@@ -51,8 +52,6 @@ library(ggautomap)
 library(ggplot2)
 library(dplyr, warn.conflicts = FALSE)
 
-set.seed(2022)
-
 data(covid_cases_nsw, package = "nswgeo")
 covid_cases_nsw
 ```
@@ -75,6 +74,7 @@ covid_cases_nsw %>%
   coord_sf_zoom(datum = NA) +
   theme_minimal()
 ```
+
 Points are drawn at random within the boundaries of their location.
 This example also uses `coord_sf_zoom()` as a replacement for `coord_sf()` that
 automatically crops the map around your data points.

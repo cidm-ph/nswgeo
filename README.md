@@ -37,8 +37,6 @@ library(ggautomap)
 library(ggplot2)
 library(dplyr, warn.conflicts = FALSE)
 
-set.seed(2022)
-
 data(covid_cases_nsw, package = "nswgeo")
 covid_cases_nsw
 #> # A tibble: 100 × 5
@@ -79,6 +77,7 @@ covid_cases_nsw %>%
 ```
 
 <img src="man/figures/README-example-scatter-1.png" width="100%" />
+
 Points are drawn at random within the boundaries of their location. This
 example also uses `coord_sf_zoom()` as a replacement for `coord_sf()`
 that automatically crops the map around your data points.
