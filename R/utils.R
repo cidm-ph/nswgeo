@@ -42,6 +42,26 @@ normalise_state_names <- function(names) {
   names
 }
 
+#' Normalise postal codes
+#'
+#' Some special postcodes are used in addresses, such as codes for post office boxes.
+#' This helper converts those to the postcode for the closest normal suburb if there
+#' is a reasonable clear match.
+#'
+#' If there is no good match, the postcodes are left unchanged.
+#'
+#' @param codes Character vector of postcodes (or coercible to one).
+#'
+#' @return Character vector of the same size as the input, but with the normalised postcodes.
+#'
+#' @export
+normalise_postcodes <- function(codes) {
+  codes <- as.character(codes)
+  dict <- stats::setNames(postcodes$canonical, postcodes$postcode)
+  normed <- unname(dict[codes])
+  ifelse(is.na(normed), codes, normed)
+}
+
 #' Coordinate reference system for Australia
 #'
 #' GDA2020 is the official CRS used by the
