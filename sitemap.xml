@@ -28,6 +28,9 @@
     <loc>https://cidm-ph.github.io/nswgeo/reference/index.html</loc>
   </url>
   <url>
+    <loc>https://cidm-ph.github.io/nswgeo/reference/normalise_postcodes.html</loc>
+  </url>
+  <url>
     <loc>https://cidm-ph.github.io/nswgeo/reference/normalise_state_names.html</loc>
   </url>
   <url>
@@ -35,6 +38,9 @@
   </url>
   <url>
     <loc>https://cidm-ph.github.io/nswgeo/reference/nswgeo-package.html</loc>
+  </url>
+  <url>
+    <loc>https://cidm-ph.github.io/nswgeo/reference/postcodes.html</loc>
   </url>
   <url>
     <loc>https://cidm-ph.github.io/nswgeo/reference/suburbs.html</loc>
