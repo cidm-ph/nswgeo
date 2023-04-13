@@ -25,7 +25,8 @@ set.seed(2022)
 <!-- badges: end -->
 
 A collection of geospatial datasets and map plotting helpers for working
-with New South Wales maps.
+with New South Wales maps. The maps are registered with `{cartographer}` and so
+are compatible with `{ggautomap}`.
 
 ## Installation
 

@@ -57,7 +57,7 @@ normalise_state_names <- function(names) {
 #' @export
 normalise_postcodes <- function(codes) {
   codes <- as.character(codes)
-  dict <- stats::setNames(postcodes$canonical, postcodes$postcode)
+  dict <- stats::setNames(nswgeo::postcodes$canonical, nswgeo::postcodes$postcode)
   normed <- unname(dict[codes])
   ifelse(is.na(normed), codes, normed)
 }
