@@ -9,11 +9,12 @@
 #'   \item{postcode}{The main postcode of the suburb, as a character}
 #' }
 #' @source
-#'   Spatial Services, Department of Customer Service.
+#'   Spatial Services, Department of Customer Service NSW.
 #'   "NSW Administrative Boundaries Theme - Suburb."
 #'   \url{https://portal.spatial.nsw.gov.au/portal/home/item.html?id=38bdaa10b7cc41a3a19be6eca91f5368}, accessed 21 September 2022.
 #'
-#'   The original dataset is published under the Creative Commons Attribution 4.0 Australia licence, © Spatial Services 2021.
+#'   The original dataset is published under the [Creative Commons Attribution 4.0 International](http://creativecommons.org/licenses/by/4.0/) licence,
+#'   © State of New South Wales ([Spatial Services](https://www.spatial.nsw.gov.au/copyright), a business unit of the Department of Customer Service NSW).
 "suburbs"
 
 #' Geospatial data of the Australian state and territory administrative boundaries.
