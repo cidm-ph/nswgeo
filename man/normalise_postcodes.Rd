@@ -15,8 +15,14 @@ Character vector of the same size as the input, but with the normalised postcode
 \description{
 Some special postcodes are used in addresses, such as codes for post office boxes.
 This helper converts those to the postcode for the closest normal suburb if there
-is a reasonable clear match.
+is a reasonable clear match. If there is no good match, the postcodes are left
+unchanged.
 }
 \details{
-If there is no good match, the postcodes are left unchanged.
+Note that this goes a little further than the aliases that are registered with
+cartographer (which only account for postcodes with no geospatial data in the ABS
+dataset).
+}
+\examples{
+normalise_postcodes(c(1685, 2000, 1010, 2129, 2145))
 }
