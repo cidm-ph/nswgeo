@@ -25,7 +25,7 @@ Remotes: github::cidm-ph/ggmapinset,
 Depends: 
     R (>= 4.2),
 Imports: 
-    cartographer
+    cartographer (>= 0.1.1)
 Suggests: 
     dplyr (>= 1.0.0),
     ggmapinset (>= 0.1.1),

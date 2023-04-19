@@ -20,26 +20,11 @@
 #' @return Vector of the same size as the input, but with the normalised state names.
 #'
 #' @export
+#' @examples
+#' normalise_state_names(c("nsw", "VIC", "overseas", "Queensland"))
 normalise_state_names <- function(names) {
-  if (length(names) == 0) return(names)
-  normed <- unname(.state_abbr)
-
-  matches <- mapply(
-    function(...) {
-      m <- c(...)
-      m <- as.integer(m[!is.na(m)])
-      if (length(m) > 0) m[[1]] else NA_integer_
-    },
-    match(.state_abbr[names], normed),
-    match(tolower(names), tolower(normed)),
-    match(stats::setNames(.state_abbr, tolower(names(.state_abbr)))[tolower(names)],
-          normed),
-    match(stats::setNames(tolower(.state_abbr), tolower(names(.state_abbr)))[tolower(names)],
-          tolower(normed))
-  )
-
-  names[!is.na(matches)] <- .state_abbr[matches[!is.na(matches)]]
-  names
+  cartographer::resolve_feature_names(names, feature_type = "nswgeo.states",
+                                      unmatched = "pass")
 }
 
 #' Normalise postal codes

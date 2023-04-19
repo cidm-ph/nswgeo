@@ -17,3 +17,6 @@ Expand abbreviations like \code{"NSW"} to \code{"New South Wales"}, and
 normalise to title capitalisation. Entries that don't match any state name or
 abbreviation are left untouched.
 }
+\examples{
+normalise_state_names(c("nsw", "VIC", "overseas", "Queensland"))
+}
