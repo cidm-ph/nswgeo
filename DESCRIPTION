@@ -23,7 +23,7 @@ Remotes: github::cidm-ph/cartographer
 Depends: 
     R (>= 4.2),
 Imports: 
-    cartographer (>= 0.1.1)
+    cartographer (>= 0.2)
 Suggests: 
     dplyr (>= 1.0.0),
     ggplot2,
