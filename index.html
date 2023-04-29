@@ -66,7 +66,7 @@
 </h1></div>
 <!-- badges: start -->
 
-<p>A collection of geospatial datasets and map plotting helpers for working with New South Wales maps. The maps are registered with <a href="https://github.com/cidm-ph/cartographer" class="external-link">cartographer</a> and so are compatible with <a href="https://github.com/cidm-ph/ggautomap" class="external-link">ggautomap</a>.</p>
+<p>A collection of geospatial datasets and map plotting helpers for working with New South Wales maps. The maps are registered with <a href="https://github.com/cidm-ph/cartographer" class="external-link">cartographer</a> and so are compatible with <code>{ggautomap}</code>.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
@@ -98,7 +98,7 @@
 <span><span class="co">#&gt; 5 2768     Blacktown Western Sydney      2021 A    </span></span>
 <span><span class="co">#&gt; 6 2766     Blacktown Western Sydney      2021 B</span></span></code></pre></div>
 <p>Using <a href="https://github.com/cidm-ph/cartographer" class="external-link">cartographer</a>, this can be converted into a spatial data frame.</p>
-<p>Alternatively, <a href="https://github.com/cidm-ph/ggautomap" class="external-link">ggautomap</a> can take such a data frame and plot maps directly. For some recipes and examples, see the vignette in the <a href="https://github.com/cidm-ph/ggautomap" class="external-link">ggautomap</a> package.</p>
+<p>Alternatively, <code>{ggautomap}</code> can take such a data frame and plot maps directly. For some recipes and examples, see the vignette in the <code>{ggautomap}</code> package.</p>
 <p>The data can also be used directly with ggplot:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="fu">nswgeo</span><span class="fu">::</span><span class="va"><a href="reference/nsw.html">lhd</a></span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html" class="external-link">geom_sf</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
