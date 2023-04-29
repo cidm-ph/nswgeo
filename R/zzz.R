@@ -3,8 +3,8 @@
     aliases <- (nswgeo::postcodes$postcode != nswgeo::postcodes$canonical) &
                (! nswgeo::postcodes$postcode %in% nswgeo::poa_nsw$POA_CODE_2021) &
                (nswgeo::postcodes$canonical %in% nswgeo::poa_nsw$POA_CODE_2021)
-    setNames(nswgeo::postcodes$postcode[aliases],
-             nswgeo::postcodes$canonical[aliases])
+    stats::setNames(nswgeo::postcodes$postcode[aliases],
+                    nswgeo::postcodes$canonical[aliases])
   }
 
   cartographer::register_map("nswgeo.lhd", nswgeo::lhd,
