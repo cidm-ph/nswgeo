@@ -22,13 +22,13 @@ RoxygenNote: 7.2.3
 Depends: 
     R (>= 4.2),
 Imports: 
-    cartographer (>= 0.2)
+    cartographer (>= 0.2),
+    sf (>= 1.0)
 Suggests: 
     dplyr (>= 1.0.0),
     ggplot2,
     nngeo,
     readr,
-    sf (>= 1.0),
     stringr
 URL: https://github.com/cidm-ph/nswgeo,
     https://cidm-ph.github.io/nswgeo/
