@@ -13,7 +13,7 @@
 #'   "NSW Administrative Boundaries Theme - Suburb."
 #'   \url{https://portal.spatial.nsw.gov.au/portal/home/item.html?id=38bdaa10b7cc41a3a19be6eca91f5368}, accessed 21 September 2022.
 #'
-#'   The original dataset is published under the [Creative Commons Attribution 4.0 International](http://creativecommons.org/licenses/by/4.0/) licence,
+#'   The original dataset is published under the [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) licence,
 #'   © State of New South Wales ([Spatial Services](https://www.spatial.nsw.gov.au/copyright), a business unit of the Department of Customer Service NSW).
 "suburbs"
 
@@ -31,7 +31,7 @@
 #'   Australian Bureau of Statistics. "Australian Statistical Geography Standard (ASGS) Edition 3." ABS, Jul2021-Jun2026,
 #'   \url{https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026}, accessed 10 November 2022.
 #'
-#'   The original dataset is published under the [Creative Commons Attribution 4.0 International](http://creativecommons.org/licenses/by/4.0/) licence, © Commonwealth of Australia 2021.
+#'   The original dataset is published under the [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) licence, © Commonwealth of Australia 2021.
 #' @describeIn australia External boundaries of Australia as a multipolygon.
 "australia"
 #' @describeIn australia State and internal territory boundaries of Australia.
@@ -55,7 +55,7 @@
 #'   Australian Bureau of Statistics. "Australian Statistical Geography Standard (ASGS) Edition 3." ABS, Jul2021-Jun2026,
 #'   \url{https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026}, accessed 27 September 2022.
 #'
-#'   The original dataset is published under the [Creative Commons Attribution 4.0 International](http://creativecommons.org/licenses/by/4.0/) licence, © Commonwealth of Australia 2021.
+#'   The original dataset is published under the [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) licence, © Commonwealth of Australia 2021.
 #'
 #' @describeIn nsw External boundaries of New South Wales as a multipolygon.
 "nsw"
@@ -77,8 +77,8 @@
 #'   NSW Ministry of Health, "Map of local health districts",
 #'   \url{https://www.health.nsw.gov.au/lhd/Pages/lhd-maps.aspx}.
 #'
-#'   The original dataset is published under the [Creative Commons Attribution 4.0 International](http://creativecommons.org/licenses/by/4.0/) licence,
-#'   © State of New South Wales NSW Ministry of Health. For current information go to \url{www.health.nsw.gov.au}.
+#'   The original dataset is published under the [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) licence,
+#'   © State of New South Wales NSW Ministry of Health. For current information go to \url{https://www.health.nsw.gov.au}.
 #' @examples
 #' library(ggplot2)
 #' ggplot(lhd) + geom_sf(aes(fill = lhd_name), show.legend = FALSE)
