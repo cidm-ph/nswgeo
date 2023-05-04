@@ -45,9 +45,15 @@ level of detail.
 \examples{
 library(ggplot2)
 ggplot(lga_nsw) + geom_sf(aes(fill = LGA_NAME_2021), show.legend = FALSE)
-ggplot(poa_nsw) +
+
+library(sf)
+sf_use_s2(FALSE)
+# cut out part of the postcode dataset (it's quite large)
+bbox <- st_bbox(c(xmin = 142, xmax = 147, ymin = -33, ymax = -30)) |>
+ st_as_sfc(crs = crs_gda2020())
+st_crop(poa_nsw, bbox) |>
+  ggplot() +
   geom_sf() +
-  geom_sf_text(aes(label = POA_CODE_2021), size = 4, colour = "gray70") +
-  coord_sf(xlim = c(142, 149), ylim = c(-35, -30))
+  geom_sf_text(aes(label = POA_CODE_2021), size = 4)
 }
 \keyword{datasets}
