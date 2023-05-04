@@ -42,27 +42,27 @@ install.packages('nswgeo')
 
 ## Examples
 
-The datasets you use with this package will have one column that contains
-a feature name (Local Health District, Local Government Area, or postal
-code). You'll probably also have columns you want to use for faceting
-and/or colouring points as in this example:
-
-```{r}
-library(nswgeo)
-library(ggplot2)
-data(covid_cases_nsw, package = "nswgeo")
-
-head(covid_cases_nsw)
-```
-
-Using `{cartographer}`, this can be converted into a spatial data frame.
-
-Alternatively, `{ggautomap}` can take such a data frame and plot maps directly.
-For some recipes and examples, see the vignette in the `{ggautomap}` package.
-
-The data can also be used directly with ggplot:
+The data can be used directly with ggplot:
 
 ```{r ggplot}
+library(nswgeo)
+library(ggplot2)
+
 ggplot(nswgeo::lhd) + geom_sf(aes(fill = lhd_name), show.legend = FALSE)
+```
+
+Alternatively, the data can be accessed through `{cartographer}`:
+
+```{r cartographer}
+library(cartographer)
+head(covid_cases_nsw)
+
+covid_cases_nsw |>
+  dplyr::count(lga) |>
+  add_geometry(lga, feature_type = "nswgeo.lga") |>
+  ggplot() +
+  geom_sf(aes(fill = n)) +
+  geom_sf(fill = NA, data = map_sf("nswgeo.lga")) +
+  theme_void()
 ```
 
