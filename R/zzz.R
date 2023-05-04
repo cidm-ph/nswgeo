@@ -9,16 +9,16 @@
 
   cartographer::register_map("nswgeo.lhd", nswgeo::lhd,
                           feature_column = "lhd_name",
-                          outline = lhd_outline)
+                          outline = sf::st_sf(geometry = lhd_outline))
   cartographer::register_map("nswgeo.lga", nswgeo::lga_nsw,
                           feature_column = "LGA_NAME_2021",
-                          outline = nswgeo::nsw)
+                          outline = sf::st_sf(geometry = nswgeo::nsw))
   cartographer::register_map("nswgeo.postcode", nswgeo::poa_nsw,
                           feature_column = "POA_CODE_2021",
-                          outline = nswgeo::nsw,
+                          outline = sf::st_sf(geometry = nswgeo::nsw),
                           aliases = pcode_aliases)
   cartographer::register_map("nswgeo.states", nswgeo::states,
                           feature_column = "STE_NAME21",
-                          outline = nswgeo::australia,
+                          outline = sf::st_sf(geometry = nswgeo::australia),
                           aliases = .state_abbr)
 }
