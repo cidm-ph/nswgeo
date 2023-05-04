@@ -3,14 +3,11 @@
 \docType{data}
 \name{nsw}
 \alias{nsw}
-\alias{lhd}
 \alias{lga_nsw}
 \alias{poa_nsw}
 \title{Geospatial data of the New South Wales administrative boundaries.}
 \format{
 An object of class \code{sfc_MULTIPOLYGON} (inherits from \code{sfc}) of length 1.
-
-An object of class \code{sf} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 15 rows and 13 columns.
 
 An object of class \code{sf} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 131 rows and 9 columns.
 
@@ -24,8 +21,6 @@ The original dataset is published under the \href{http://creativecommons.org/lic
 }
 \usage{
 nsw
-
-lhd
 
 lga_nsw
 
@@ -41,8 +36,6 @@ level of detail.
 \section{Functions}{
 \itemize{
 \item \code{nsw}: External boundaries of New South Wales as a multipolygon.
-
-\item \code{lhd}: Local Health District boundaries of New South Wales
 
 \item \code{lga_nsw}: Local Government Area boundaries of New South Wales.
 

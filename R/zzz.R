@@ -9,7 +9,7 @@
 
   cartographer::register_map("nswgeo.lhd", nswgeo::lhd,
                           feature_column = "lhd_name",
-                          outline = nswgeo::nsw)
+                          outline = lhd_outline)
   cartographer::register_map("nswgeo.lga", nswgeo::lga_nsw,
                           feature_column = "LGA_NAME_2021",
                           outline = nswgeo::nsw)

@@ -50,12 +50,27 @@
 #'
 #' @describeIn nsw External boundaries of New South Wales as a multipolygon.
 "nsw"
-#' @describeIn nsw Local Health District boundaries of New South Wales
-"lhd"
 #' @describeIn nsw Local Government Area boundaries of New South Wales.
 "lga_nsw"
 #' @describeIn nsw Postal area boundaries of New South Wales.
 "poa_nsw"
+
+#' Local Health Districts of NSW.
+#'
+#' The geometries have been simplified with a tolerance of 1 km to reduce the
+#' level of detail.
+#'
+#' @source
+#'   Spatial Services, Department of Customer Service NSW.
+#'   "MyHospitals_Public",
+#'   \url{https://portal.spatial.nsw.gov.au/portal/home/item.html?id=78df4a3e987b4e7e8b241ee5bfeee358}, accessed 4 May 2023.
+#'   Republished from
+#'   NSW Ministry of Health, "Map of local health districts",
+#'   \url{https://www.health.nsw.gov.au/lhd/Pages/lhd-maps.aspx}.
+#'
+#'   The original dataset is published under the [Creative Commons Attribution 4.0 International](http://creativecommons.org/licenses/by/4.0/) licence,
+#'   © State of New South Wales NSW Ministry of Health. For current information go to \url{www.health.nsw.gov.au}.
+"lhd"
 
 #' Postal codes and localities of New South Wales.
 #'
