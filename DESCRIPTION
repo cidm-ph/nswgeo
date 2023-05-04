@@ -1,6 +1,6 @@
 Package: nswgeo
 Title: Geospatial Data and Maps for New South Wales, Australia
-Version: 0.3.2
+Version: 0.3.3
 Authors@R: 
     c(person(given = "Carl",
              family = "Suster",
@@ -9,9 +9,9 @@ Authors@R:
              comment = c(ORCID = "0000-0001-7021-9380")),
       person("Western Sydney Local Health District, NSW Health",
              role = "cph"))
-Description: Geospatial data for creating maps of NSW, and some helpers to work
-  with common problems like normalising postcodes. Registers its data with
-  'cartographer'.
+Description: Geospatial data for creating maps of New South Wales (NSW),
+  Australia, and some helpers to work with common problems like normalising
+  postcodes. Registers its data with 'cartographer'.
 License: MIT + file LICENSE
 Copyright: file COPYRIGHTS
 Encoding: UTF-8

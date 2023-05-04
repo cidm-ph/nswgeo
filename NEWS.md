@@ -1,3 +1,3 @@
-# nswgeo 0.3.2
+# nswgeo 0.3.3
 
 * Initial CRAN release.
