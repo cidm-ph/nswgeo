@@ -73,7 +73,8 @@ poa_nsw <- poa %>%
   st_transform(crs_working) %>%
   st_intersection(st_transform(nsw_hires, crs_working)) %>%
   st_simplify(dTolerance = tolerance_m, preserveTopology = TRUE) %>%
-  st_transform(crs_nsw)
+  st_transform(crs_nsw) %>%
+  st_make_valid()
 if (any(st_is_empty(poa_nsw))) {
   print(poa_nsw$POA_NAME_2021[st_is_empty(poa_nsw)])
   stop(sprintf("%d postcodes have been completely removed by simplification",
