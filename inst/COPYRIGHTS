@@ -6,8 +6,11 @@ data/covid_cases_nsw.rda
   © State of New South Wales 2020-2022
   https://www.nsw.gov.au/copyright
 
-data/lga_nsw.rda
 data/lhd.rda
+  © State of New South Wales NSW Ministry of Health 2023
+  https://www.health.nsw.gov.au/pages/copyright.aspx
+
+data/lga_nsw.rda
 data/nsw.rda
 data/poa_nsw.rda
   © Commonwealth of Australia 2021

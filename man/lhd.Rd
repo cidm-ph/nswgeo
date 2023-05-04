@@ -16,7 +16,7 @@ NSW Ministry of Health, "Map of local health districts",
 \url{https://www.health.nsw.gov.au/lhd/Pages/lhd-maps.aspx}.
 
 The original dataset is published under the \href{https://creativecommons.org/licenses/by/4.0/}{Creative Commons Attribution 4.0 International} licence,
-© State of New South Wales NSW Ministry of Health. For current information go to \url{https://www.health.nsw.gov.au}.
+© State of New South Wales NSW Ministry of Health 2023. For current information go to \url{https://www.health.nsw.gov.au}.
 }
 \usage{
 lhd

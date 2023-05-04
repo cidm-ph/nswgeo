@@ -83,7 +83,7 @@
 #'   \url{https://www.health.nsw.gov.au/lhd/Pages/lhd-maps.aspx}.
 #'
 #'   The original dataset is published under the [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) licence,
-#'   © State of New South Wales NSW Ministry of Health. For current information go to \url{https://www.health.nsw.gov.au}.
+#'   © State of New South Wales NSW Ministry of Health 2023. For current information go to \url{https://www.health.nsw.gov.au}.
 #' @examples
 #' library(ggplot2)
 #' ggplot(lhd) + geom_sf(aes(fill = lhd_name), show.legend = FALSE)
