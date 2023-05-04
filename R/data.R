@@ -24,12 +24,14 @@
 #' The geometries have been simplified with a tolerance of 5 km to reduce the
 #' level of detail.
 #'
+#' @examples
+#' library(ggplot2)
+#' ggplot(states) + geom_sf(aes(fill = STE_NAME21))
 #' @source
 #'   Australian Bureau of Statistics. "Australian Statistical Geography Standard (ASGS) Edition 3." ABS, Jul2021-Jun2026,
 #'   \url{https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026}, accessed 10 November 2022.
 #'
 #'   The original dataset is published under the [Creative Commons Attribution 4.0 International](http://creativecommons.org/licenses/by/4.0/) licence, © Commonwealth of Australia 2021.
-#'
 #' @describeIn australia External boundaries of Australia as a multipolygon.
 "australia"
 #' @describeIn australia State and internal territory boundaries of Australia.
@@ -42,6 +44,13 @@
 #' The geometries have been simplified with a tolerance of 1 km to reduce the
 #' level of detail.
 #'
+#' @examples
+#' library(ggplot2)
+#' ggplot(lga_nsw) + geom_sf(aes(fill = LGA_NAME_2021), show.legend = FALSE)
+#' ggplot(poa_nsw) +
+#'   geom_sf() +
+#'   geom_sf_text(aes(label = POA_CODE_2021), size = 4, colour = "gray70") +
+#'   coord_sf(xlim = c(142, 149), ylim = c(-35, -30))
 #' @source
 #'   Australian Bureau of Statistics. "Australian Statistical Geography Standard (ASGS) Edition 3." ABS, Jul2021-Jun2026,
 #'   \url{https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026}, accessed 27 September 2022.
@@ -70,6 +79,9 @@
 #'
 #'   The original dataset is published under the [Creative Commons Attribution 4.0 International](http://creativecommons.org/licenses/by/4.0/) licence,
 #'   © State of New South Wales NSW Ministry of Health. For current information go to \url{www.health.nsw.gov.au}.
+#' @examples
+#' library(ggplot2)
+#' ggplot(lhd) + geom_sf(aes(fill = lhd_name), show.legend = FALSE)
 "lhd"
 
 #' Postal codes and localities of New South Wales.
@@ -78,6 +90,9 @@
 #' This version additionally attempts to canonicalise non-physical postcodes to
 #' assist with mapping.
 #'
+#' @examples
+#' set.seed(12345)
+#' postcodes[sort(sample.int(nrow(postcodes), 5)),]
 #' @format A data frame with 7 columns:
 #' \describe{
 #'   \item{postcode}{A postal code}
@@ -100,6 +115,8 @@
 #'
 #' This subset covers a random selection of entries from 3 LGAs, and ignores the case count field.
 #'
+#' @examples
+#' head(covid_cases_nsw)
 #' @format A data frame with 100 rows and the following columns:
 #' \describe{
 #'   \item{postcode}{The postal code}

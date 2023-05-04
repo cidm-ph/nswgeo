@@ -42,4 +42,12 @@ level of detail.
 \item \code{poa_nsw}: Postal area boundaries of New South Wales.
 
 }}
+\examples{
+library(ggplot2)
+ggplot(lga_nsw) + geom_sf(aes(fill = LGA_NAME_2021), show.legend = FALSE)
+ggplot(poa_nsw) +
+  geom_sf() +
+  geom_sf_text(aes(label = POA_CODE_2021), size = 4, colour = "gray70") +
+  coord_sf(xlim = c(142, 149), ylim = c(-35, -30))
+}
 \keyword{datasets}

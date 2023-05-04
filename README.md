@@ -58,7 +58,7 @@ directly. For some recipes and examples, see the vignette in the
 The data can also be used directly with ggplot:
 
 ``` r
-ggplot(nswgeo::lhd) + geom_sf()
+ggplot(nswgeo::lhd) + geom_sf(aes(fill = lhd_name), show.legend = FALSE)
 ```
 
 <img src="man/figures/README-ggplot-1.png" width="100%" />

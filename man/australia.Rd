@@ -35,4 +35,8 @@ level of detail.
 \item \code{states}: State and internal territory boundaries of Australia.
 
 }}
+\examples{
+library(ggplot2)
+ggplot(states) + geom_sf(aes(fill = STE_NAME21))
+}
 \keyword{datasets}

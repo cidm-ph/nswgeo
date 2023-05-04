@@ -30,4 +30,8 @@ Derived from several government sources with some community curation.
 This version additionally attempts to canonicalise non-physical postcodes to
 assist with mapping.
 }
+\examples{
+set.seed(12345)
+postcodes[sort(sample.int(nrow(postcodes), 5)),]
+}
 \keyword{datasets}

@@ -27,4 +27,7 @@ covid_cases_nsw
 \description{
 This subset covers a random selection of entries from 3 LGAs, and ignores the case count field.
 }
+\examples{
+head(covid_cases_nsw)
+}
 \keyword{datasets}

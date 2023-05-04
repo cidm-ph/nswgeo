@@ -25,4 +25,8 @@ lhd
 The geometries have been simplified with a tolerance of 1 km to reduce the
 level of detail.
 }
+\examples{
+library(ggplot2)
+ggplot(lhd) + geom_sf(aes(fill = lhd_name), show.legend = FALSE)
+}
 \keyword{datasets}
