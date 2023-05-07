@@ -1,6 +1,6 @@
 Package: nswgeo
 Title: Geospatial Data and Maps for New South Wales, Australia
-Version: 0.3.3
+Version: 0.3.3.9000
 Authors@R: 
     c(person(given = "Carl",
              family = "Suster",
