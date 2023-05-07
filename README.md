@@ -8,6 +8,8 @@
 [![nswgeo status
 badge](https://cidm-ph.r-universe.dev/badges/nswgeo)](https://cidm-ph.r-universe.dev)
 [![R-CMD-check](https://github.com/cidm-ph/nswgeo/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/cidm-ph/nswgeo/actions/workflows/R-CMD-check.yaml)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/nswgeo)](https://CRAN.R-project.org/package=nswgeo)
 <!-- badges: end -->
 
 A collection of geospatial datasets and map plotting helpers for working
@@ -19,11 +21,11 @@ and so are compatible with `{ggautomap}`.
 You can install nswgeo like so:
 
 ``` r
-options(repos = c(
-  cidmph = 'https://cidm-ph.r-universe.dev',
-  CRAN = 'https://cloud.r-project.org'))
-  
+# CRAN release
 install.packages('nswgeo')
+
+# development version
+install.packages('nswgeo', repos = c('https://cidm-ph.r-universe.dev', 'https://cloud.r-project.org'))
 ```
 
 ## Examples
