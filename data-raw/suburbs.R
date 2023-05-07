@@ -1,7 +1,9 @@
 library(readr)
 library(dplyr)
 
-if (!file.exists("data-raw/Suburb.csv")) {
+data_path <- "data-raw/Suburb.csv"
+
+if (!file.exists(data_path)) {
   message("You need to download the source dataset from the NSW Government portal at:")
   message("https://data.nsw.gov.au/search/dataset/ds-nsw-ckan-30a4fce0-9df9-42af-ac20-94baf079b6f8")
   message("Choose the CSV format and disable any filters. You will be emailed a link.")
@@ -9,7 +11,7 @@ if (!file.exists("data-raw/Suburb.csv")) {
   stop("Raw suburb dataset is missing")
 }
 
-suburbs <- read_csv("data-raw/Suburb.csv", col_types = cols(
+suburbs <- read_csv(data_path, col_types = cols(
   rid = col_double(),
   suburbname = col_character(),
   postcode = col_character(),

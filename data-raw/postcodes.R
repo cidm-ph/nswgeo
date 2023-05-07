@@ -74,7 +74,7 @@ postcodes <-
       canon <- sort(unique(na.omit(c(canon, manual_canonical))))
 
       if (any(special, na.rm = TRUE) && length(canon) == 0) {
-        # warning("No canonical postcodes")
+        warning("No canonical postcodes")
         canon <- postcode
       }
 

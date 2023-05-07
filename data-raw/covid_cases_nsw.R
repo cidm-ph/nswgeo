@@ -1,11 +1,12 @@
 library(dplyr)
 
-if (!file.exists("data-raw/confirmed_cases_table1_location_agg.csv")) {
+data_path <- "data-raw/confirmed_cases_table1_location_agg.csv"
+if (!file.exists(data_path)) {
   cases_url <- "https://data.nsw.gov.au/data/dataset/aefcde60-3b0c-4bc0-9af1-6fe652944ec2/resource/5d63b527-e2b8-4c42-ad6f-677f14433520/download/confirmed_cases_table1_location_agg.csv"
-  download.file(cases_url, destfile = "data-raw/confirmed_cases_table1_location_agg.csv")
+  download.file(cases_url, destfile = data_path)
 }
 
-location_agg <- readr::read_csv("data-raw/confirmed_cases_table1_location_agg.csv")
+location_agg <- readr::read_csv(data_path)
 
 set.seed(202210)
 
