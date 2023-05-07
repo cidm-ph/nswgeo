@@ -7,6 +7,7 @@
 
 [![nswgeo status
 badge](https://cidm-ph.r-universe.dev/badges/nswgeo)](https://cidm-ph.r-universe.dev)
+[![R-CMD-check](https://github.com/cidm-ph/nswgeo/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/cidm-ph/nswgeo/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 A collection of geospatial datasets and map plotting helpers for working
