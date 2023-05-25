@@ -3,7 +3,7 @@
 \docType{data}
 \name{phn}
 \alias{phn}
-\title{Public Health Network boundaries of New South Wales}
+\title{Primary Health Network boundaries of New South Wales}
 \format{
 An object of class \code{sf} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 10 rows and 9 columns.
 }
