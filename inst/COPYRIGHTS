@@ -10,6 +10,9 @@ data/lhd.rda
   © State of New South Wales NSW Ministry of Health 2023
   https://www.health.nsw.gov.au/pages/copyright.aspx
 
+data/phn.rda
+  © Commonwealth of Australia 2021
+
 data/lga_nsw.rda
 data/nsw.rda
 data/poa_nsw.rda
