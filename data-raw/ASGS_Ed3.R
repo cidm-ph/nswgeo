@@ -69,16 +69,21 @@ usethis::use_data(nsw, overwrite = TRUE)
 # object.size(sal_nsw)
 
 poa <- read_sf(abs_geopackage, layer = "POA_2021_AUST_GDA2020")
-poa_nsw <- poa %>%
+# Check for overlap of the interiors of the geometries to exclude postal areas
+# at the state borders. In theory st_relate with pattern = "T********" should do
+# this, but there is some slight overlap between geometries in the dataset, so a
+# small negative buffer approach is more reliable.
+poa_in_nsw <- st_intersects(
+  st_transform(poa, crs_working),
+  st_buffer(nsw_hires, -100L)) |>
+  sapply(function(x) length(x) > 0)
+
+poa_nsw <- poa[poa_in_nsw, ] %>%
   st_transform(crs_working) %>%
-  st_intersection(st_transform(nsw_hires, crs_working)) %>%
   st_simplify(dTolerance = tolerance_m, preserveTopology = TRUE) %>%
   st_transform(crs_nsw) %>%
   st_make_valid()
-if (any(st_is_empty(poa_nsw))) {
-  print(poa_nsw$POA_NAME_2021[st_is_empty(poa_nsw)])
-  stop(sprintf("%d postcodes have been completely removed by simplification",
-               sum(st_is_empty(poa_nsw))))
-}
+stopifnot(all(!st_is_empty(poa_nsw)))
+stopifnot(all(st_geometry_type(poa_nsw) != "GEOMETRYCOLLECTION"))
 object.size(poa_nsw)
 usethis::use_data(poa_nsw, overwrite = TRUE)
