@@ -49,7 +49,7 @@
 #'
 #' The geometry for `nsw` has been simplified with a tolerance of 750 m to
 #' reduce the level of detail, whereas the territories maintain their full
-#' resolution.
+#' resolution. `sydney` is simplified with a 500 m tolerance.
 #'
 #' @seealso [outline()]
 #' @source
@@ -65,6 +65,8 @@
 "lhi"
 #' @describeIn nsw Jervis Bay Territory boundary.
 "jbt"
+#' @describeIn nsw Greater Sydney boundary.
+"sydney"
 
 #' Geospatial data of the New South Wales administrative boundaries.
 #'

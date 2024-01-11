@@ -6,6 +6,7 @@
 \alias{act}
 \alias{lhi}
 \alias{jbt}
+\alias{sydney}
 \title{Outlines of New South Wales and relevant territories.}
 \format{
 An object of class \code{sfc_MULTIPOLYGON} (inherits from \code{sfc}) of length 1.
@@ -15,6 +16,8 @@ An object of class \code{sfc_MULTIPOLYGON} (inherits from \code{sfc}) of length 
 An object of class \code{sfc_MULTIPOLYGON} (inherits from \code{sfc}) of length 1.
 
 An object of class \code{sfc_MULTIPOLYGON} (inherits from \code{sfc}) of length 1.
+
+An object of class \code{sfc_POLYGON} (inherits from \code{sfc}) of length 1.
 }
 \source{
 Australian Bureau of Statistics. "Australian Statistical Geography Standard (ASGS) Edition 3." ABS, Jul2021-Jun2026,
@@ -30,6 +33,8 @@ act
 lhi
 
 jbt
+
+sydney
 }
 \description{
 Lord Howe Island is administratively part of NSW, but as it is a small
@@ -43,7 +48,7 @@ sometimes useful to include in maps alongside NSW due to their locations.
 
 The geometry for \code{nsw} has been simplified with a tolerance of 750 m to
 reduce the level of detail, whereas the territories maintain their full
-resolution.
+resolution. \code{sydney} is simplified with a 500 m tolerance.
 }
 \section{Functions}{
 \itemize{
@@ -54,6 +59,8 @@ resolution.
 \item \code{lhi}: Lord Howe Island boundary.
 
 \item \code{jbt}: Jervis Bay Territory boundary.
+
+\item \code{sydney}: Greater Sydney boundary.
 
 }}
 \seealso{
