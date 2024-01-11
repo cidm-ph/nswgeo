@@ -6,7 +6,8 @@
   Jervis Bay Territory, and a utility function `outline()` for using them.
 * Add Greater Sydney boundary as `sydney` dataset.
 * Slightly increase the resolution to 750 m instead of 1 km.
-* Update to the 2023 ASGS release, including the 2023 LGA shapefile.
+* Update to the 2023 ASGS release, including the 2023 LGA shapefile. Note that
+  this means some field names changed (e.g. `LGA_NAME_2021` to `LGA_NAME_2023`).
 
 # nswgeo 0.3.3
 
