@@ -110,8 +110,8 @@ poa <- read_sf(abs_geopackage, layer = "POA_2021_AUST_GDA2020")
 # small negative buffer approach is more reliable.
 poa_in_nsw <- st_intersects(
   st_transform(poa, crs_working),
-  st_buffer(nsw_hires, -100L)) |>
-  sapply(function(x) length(x) > 0)
+  st_buffer(nsw_hires, -100L)
+) |> sapply(function(x) length(x) > 0)
 
 poa_nsw <- poa[poa_in_nsw, ] |>
   st_transform(crs_working) |>
