@@ -19,7 +19,7 @@ na_cols <- sapply(colnames(lhd_boundaries), function(c) {
 na_cols <- names(na_cols)[na_cols]
 
 # reduce the resolution of the borders to 1km
-tolerance_m <- 1000L
+tolerance_m <- 750L
 
 crs_nsw <- sf::st_crs(7844) # GDA2020
 crs_working <- sf::st_crs("+proj=eqc +lat_ts=34 units=m")
