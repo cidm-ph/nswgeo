@@ -22,7 +22,7 @@ The original dataset is published under the \href{https://creativecommons.org/li
 lhd
 }
 \description{
-The geometries have been simplified with a tolerance of 1 km to reduce the
+The geometries have been simplified with a tolerance of 750 m to reduce the
 level of detail.
 }
 \examples{

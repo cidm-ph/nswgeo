@@ -101,7 +101,7 @@
 
 #' Local Health Districts of NSW.
 #'
-#' The geometries have been simplified with a tolerance of 1 km to reduce the
+#' The geometries have been simplified with a tolerance of 750 m to reduce the
 #' level of detail.
 #'
 #' @source
