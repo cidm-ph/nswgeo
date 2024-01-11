@@ -3,15 +3,18 @@
 \docType{data}
 \name{nsw}
 \alias{nsw}
-\alias{lga_nsw}
-\alias{poa_nsw}
-\title{Geospatial data of the New South Wales administrative boundaries.}
+\alias{act}
+\alias{lhi}
+\alias{jbt}
+\title{Outlines of New South Wales and relevant territories.}
 \format{
 An object of class \code{sfc_MULTIPOLYGON} (inherits from \code{sfc}) of length 1.
 
-An object of class \code{sf} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 131 rows and 9 columns.
+An object of class \code{sfc_MULTIPOLYGON} (inherits from \code{sfc}) of length 1.
 
-An object of class \code{sf} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 715 rows and 7 columns.
+An object of class \code{sfc_MULTIPOLYGON} (inherits from \code{sfc}) of length 1.
+
+An object of class \code{sfc_MULTIPOLYGON} (inherits from \code{sfc}) of length 1.
 }
 \source{
 Australian Bureau of Statistics. "Australian Statistical Geography Standard (ASGS) Edition 3." ABS, Jul2021-Jun2026,
@@ -22,38 +25,38 @@ The original dataset is published under the \href{https://creativecommons.org/li
 \usage{
 nsw
 
-lga_nsw
+act
 
-poa_nsw
+lhi
+
+jbt
 }
 \description{
-Excludes the borders with the ACT and Jervis Bay Territory, and Lord Howe Island.
+Lord Howe Island is administratively part of NSW, but as it is a small
+island some 600 km off the coast, it is frequently omitted from maps of NSW.
 }
 \details{
-The geometries have been simplified with a tolerance of 1 km to reduce the
-level of detail.
+The Australian Capital Territory is an enclave within NSW, and Jervis Bay
+Territory is a small Australian territory on the coast, surrounded by NSW.
+Neither are NSW territory, but they affect the shape of NSW's outline and are
+sometimes useful to include in maps alongside NSW due to their locations.
+
+The geometry for \code{nsw} has been simplified with a tolerance of 750 m to
+reduce the level of detail, whereas the territories maintain their full
+resolution.
 }
 \section{Functions}{
 \itemize{
-\item \code{nsw}: External boundaries of New South Wales as a multipolygon.
+\item \code{nsw}: External state boundary excluding LHI but including ACT and JBT.
 
-\item \code{lga_nsw}: Local Government Area boundaries of New South Wales.
+\item \code{act}: Australian Capital Territory boundary.
 
-\item \code{poa_nsw}: Postal area boundaries of New South Wales.
+\item \code{lhi}: Lord Howe Island boundary.
+
+\item \code{jbt}: Jervis Bay Territory boundary.
 
 }}
-\examples{
-library(ggplot2)
-ggplot(lga_nsw) + geom_sf(aes(fill = LGA_NAME_2021), show.legend = FALSE)
-
-library(sf)
-sf_use_s2(FALSE)
-# cut out part of the postcode dataset (it's quite large)
-bbox <- st_bbox(c(xmin = 142, xmax = 147, ymin = -33, ymax = -30)) |>
- st_as_sfc(crs = crs_gda2020())
-st_crop(poa_nsw, bbox) |>
-  ggplot() +
-  geom_sf() +
-  geom_sf_text(aes(label = POA_CODE_2021), size = 4)
+\seealso{
+\code{\link[=outline]{outline()}}
 }
 \keyword{datasets}

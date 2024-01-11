@@ -3,3 +3,4 @@
 export(crs_gda2020)
 export(normalise_postcodes)
 export(normalise_state_names)
+export(outline)

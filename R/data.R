@@ -37,11 +37,43 @@
 #' @describeIn australia State and internal territory boundaries of Australia.
 "states"
 
+#' Outlines of New South Wales and relevant territories.
+#'
+#' Lord Howe Island is administratively part of NSW, but as it is a small
+#' island some 600 km off the coast, it is frequently omitted from maps of NSW.
+#'
+#' The Australian Capital Territory is an enclave within NSW, and Jervis Bay
+#' Territory is a small Australian territory on the coast, surrounded by NSW.
+#' Neither are NSW territory, but they affect the shape of NSW's outline and are
+#' sometimes useful to include in maps alongside NSW due to their locations.
+#'
+#' The geometry for `nsw` has been simplified with a tolerance of 750 m to
+#' reduce the level of detail, whereas the territories maintain their full
+#' resolution.
+#'
+#' @seealso [outline()]
+#' @source
+#'   Australian Bureau of Statistics. "Australian Statistical Geography Standard (ASGS) Edition 3." ABS, Jul2021-Jun2026,
+#'   \url{https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026}, accessed 27 September 2022.
+#'
+#'   The original dataset is published under the [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) licence, © Commonwealth of Australia 2021.
+#' @describeIn nsw External state boundary excluding LHI but including ACT and JBT.
+"nsw"
+#' @describeIn nsw Australian Capital Territory boundary.
+"act"
+#' @describeIn nsw Lord Howe Island boundary.
+"lhi"
+#' @describeIn nsw Jervis Bay Territory boundary.
+"jbt"
+
 #' Geospatial data of the New South Wales administrative boundaries.
 #'
-#' Excludes the borders with the ACT and Jervis Bay Territory, and Lord Howe Island.
+#' These include the Unincorporated Far West Region.
+#' `lga_nsw` excludes Jervis Bay Territory and the ACT.
+#' `poa_nsw` includes both territories and some postal areas extend past the
+#' state boundary.
 #'
-#' The geometries have been simplified with a tolerance of 1 km to reduce the
+#' The geometries have been simplified with a tolerance of 750 m to reduce the
 #' level of detail.
 #'
 #' @examples
@@ -62,11 +94,9 @@
 #'   \url{https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026}, accessed 27 September 2022.
 #'
 #'   The original dataset is published under the [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) licence, © Commonwealth of Australia 2021.
-#' @describeIn nsw External boundaries of New South Wales as a multipolygon.
-"nsw"
-#' @describeIn nsw Local Government Area boundaries of New South Wales.
+#' @describeIn nsw_admin Local Government Area boundaries of New South Wales.
 "lga_nsw"
-#' @describeIn nsw Postal area boundaries of New South Wales.
+#' @describeIn nsw_admin Postal area boundaries of New South Wales.
 "poa_nsw"
 
 #' Local Health Districts of NSW.

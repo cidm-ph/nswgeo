@@ -65,3 +65,52 @@ normalise_postcodes <- function(codes) {
 crs_gda2020 <- function() {
   sf::st_crs("EPSG:7844")
 }
+
+#' New South Wales outline with or without related territories
+#'
+#' The default outline `nswgeo::nsw` includes Jervis Bay Territory, excludes
+#' Lord Howe Island, and does not have a cut out for the ACT. This utility
+#' allows each of these to be adjusted.
+#'
+#' @seealso [nsw]
+#'
+#' @param lord_howe_island Include Lord Howe Island.
+#' @param act_cutout Cut out the area of the Australian Capital Territory.
+#' @param jervis_bay Cover the area of the Jervis Bay Territory.
+#'
+#' @return A simple features data frame with the requested geometries.
+#' @export
+#'
+#' @examples
+#' library(ggplot2)
+#'
+#' outline(lord_howe_island = TRUE) |> ggplot() + geom_sf()
+outline <- function(lord_howe_island = FALSE, act_cutout = TRUE, jervis_bay = TRUE) {
+  base <- nswgeo::nsw
+
+  if (act_cutout) {
+    base <- sf::st_difference(base, nswgeo::act)
+  }
+
+  if (!jervis_bay) {
+    # Since the default includes JBT and is simplified (reduced resolution), the
+    # shape of JBT needs to be enlarged a bit to avoid leaving odd pieces of
+    # geometry behind when intersecting.
+    crs_working <- sf::st_crs("+proj=eqc +lat_ts=34 units=m")
+    jbt <- nswgeo::jbt |>
+      sf::st_transform(crs_working) |>
+      sf::st_simplify(dTolerance = 750L) |>
+      sf::st_buffer(250L)
+    base <- base |>
+      sf::st_transform(crs_working) |>
+      sf::st_difference(jbt) |>
+      sf::st_transform(sf::st_crs(nswgeo::nsw)) |>
+      sf::st_make_valid()
+  }
+
+  if (lord_howe_island) {
+    sf::st_sf(geometry = rbind(base, nswgeo::lhi), name = c("NSW", "Lord Howe Island"))
+  } else {
+    sf::st_sf(geometry = base, name = "NSW")
+  }
+}
