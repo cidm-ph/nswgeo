@@ -85,18 +85,22 @@ crs_gda2020 <- function() {
 #' library(ggplot2)
 #'
 #' outline(lord_howe_island = TRUE) |> ggplot() + geom_sf()
-outline <- function(lord_howe_island = FALSE, act_cutout = TRUE, jervis_bay = TRUE) {
+outline <- function(lord_howe_island = FALSE, act_cutout = FALSE, jervis_bay = TRUE) {
   base <- nswgeo::nsw
+  crs_working <- sf::st_crs("+proj=eqc +lat_ts=34 units=m")
+  crs_nsw <- sf::st_crs(nswgeo::nsw)
 
   if (act_cutout) {
-    base <- sf::st_difference(base, nswgeo::act)
+    base <- base |>
+      sf::st_transform(crs_working) |>
+      sf::st_difference(nswgeo::act) |>
+      sf::st_transform(crs_nsw)
   }
 
   if (!jervis_bay) {
     # Since the default includes JBT and is simplified (reduced resolution), the
     # shape of JBT needs to be enlarged a bit to avoid leaving odd pieces of
     # geometry behind when intersecting.
-    crs_working <- sf::st_crs("+proj=eqc +lat_ts=34 units=m")
     jbt <- nswgeo::jbt |>
       sf::st_transform(crs_working) |>
       sf::st_simplify(dTolerance = 750L) |>
@@ -104,7 +108,7 @@ outline <- function(lord_howe_island = FALSE, act_cutout = TRUE, jervis_bay = TR
     base <- base |>
       sf::st_transform(crs_working) |>
       sf::st_difference(jbt) |>
-      sf::st_transform(sf::st_crs(nswgeo::nsw)) |>
+      sf::st_transform(crs_nsw) |>
       sf::st_make_valid()
   }
 

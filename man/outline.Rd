@@ -4,7 +4,7 @@
 \alias{outline}
 \title{New South Wales outline with or without related territories}
 \usage{
-outline(lord_howe_island = FALSE, act_cutout = TRUE, jervis_bay = TRUE)
+outline(lord_howe_island = FALSE, act_cutout = FALSE, jervis_bay = TRUE)
 }
 \arguments{
 \item{lord_howe_island}{Include Lord Howe Island.}
