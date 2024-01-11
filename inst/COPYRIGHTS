@@ -13,9 +13,15 @@ data/lhd.rda
 data/phn.rda
   © Commonwealth of Australia 2021
 
+data/australia.rda
+data/act.rda
+data/jbt.rda
 data/lga_nsw.rda
+data/lhi.rda
 data/nsw.rda
 data/poa_nsw.rda
+data/states.rda
+data/sydney.rda
   © Commonwealth of Australia 2021
   https://www.abs.gov.au/website-privacy-copyright-and-disclaimer#copyright-and-creative-commons
 
