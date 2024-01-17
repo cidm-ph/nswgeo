@@ -98,7 +98,7 @@
 #'   The original dataset is published under the [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) licence, © Commonwealth of Australia 2021.
 #' @describeIn nsw_admin Local Government Area boundaries of New South Wales.
 "lga_nsw"
-#' @describeIn nsw_admin Postal area boundaries of New South Wales.
+#' @describeIn nsw_admin [Postal area](https://www.abs.gov.au/ausstats/abs@.nsf/Lookup/by%20Subject/1270.0.55.003~July%202016~Main%20Features~Postal%20Areas%20(POA)~8) boundaries of New South Wales.
 "poa_nsw"
 
 #' Local Health Districts of NSW.
@@ -133,6 +133,43 @@
 #'   The original dataset is published under the [Creative Commons Attribution 2.5 Australia](https://creativecommons.org/licenses/by/2.5/au/) licence,
 #'   © Commonwealth of Australia 2021.
 "phn"
+
+#' Concordance between postal areas and local health districts.
+#'
+#' Contains the other administrative geometries which intersect with the local
+#' health district boundaries, along with the size of the intersection.
+#'
+#' For geographic regions used by the Australian Bureau of Statistics (ABS), the
+#' ABS publishes [correspondence files](https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026/access-and-downloads/correspondences).
+#' These files compare how two different types of regions align with each other.
+#' The Australian Government Department of Health and Aged Care published
+#' analogous [concordance files](https://www.health.gov.au/resources/collections/primary-health-networks-phns-collection-of-concordance-files)
+#' for primary health networks (PHNs).
+#' These are useful for mapping between different types of administrative
+#' districts.
+#' There does not appear to be a publicly available set of concordance files for
+#' New South Wales local health district geographies.
+#'
+#' The concordance was computed here by intersecting the ABS geometries with the
+#' local health district geometries. The fraction of the ABS geometry's area
+#' included in the intersection is reported in the column `FRAC_INCLUDED`.
+#' Any intersection with `FRAC_INCLUDED` at least 0.01% was retained.
+#' Area computations were performed in `crs_gda2020_albers()` (EPSG 9473 equal
+#' area Albers) coordinates at the original reolution of the source data.
+#'
+#' Note that [postal areas](https://www.abs.gov.au/ausstats/abs@.nsf/Lookup/by%20Subject/1270.0.55.003~July%202016~Main%20Features~Postal%20Areas%20(POA)~8)
+#' are not precisely the same as postcodes used by Australia Post, however they
+#' are very similar.
+#' @source Computed using the same source datasets as `lhd` and `poa_nsw`.
+#' @examples
+#' library(dplyr)
+#'
+#' # postcodes that overlap with Murrumbidgee LHD
+#' poa_lhd_concordance |>
+#'   filter(lhd_name == "Murrumbidgee", FRAC_INCLUDED > 0.005) |>
+#'   arrange(desc(FRAC_INCLUDED)) |>
+#'   pull(POA_NAME_2021)
+"poa_lhd_concordance"
 
 #' Postal codes and localities of New South Wales.
 #'

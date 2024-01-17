@@ -35,7 +35,7 @@ level of detail.
 \itemize{
 \item \code{lga_nsw}: Local Government Area boundaries of New South Wales.
 
-\item \code{poa_nsw}: Postal area boundaries of New South Wales.
+\item \code{poa_nsw}: \href{https://www.abs.gov.au/ausstats/abs@.nsf/Lookup/by\%20Subject/1270.0.55.003~July\%202016~Main\%20Features~Postal\%20Areas\%20(POA)~8}{Postal area} boundaries of New South Wales.
 
 }}
 \examples{
