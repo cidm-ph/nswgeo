@@ -8,6 +8,8 @@
 * Slightly increase the resolution to 750 m instead of 1 km.
 * Update to the 2023 ASGS release, including the 2023 LGA shapefile. Note that
   this means some field names changed (e.g. `LGA_NAME_2021` to `LGA_NAME_2023`).
+* Add new coordinate system references relevant for Australia
+  (`crs_gda2020_cartesian` and `crs_gda2020_albers`).
 
 # nswgeo 0.3.3
 

@@ -2,9 +2,15 @@
 % Please edit documentation in R/utils.R
 \name{crs_gda2020}
 \alias{crs_gda2020}
+\alias{crs_gda2020_cartesian}
+\alias{crs_gda2020_albers}
 \title{Coordinate reference system for Australia}
 \usage{
 crs_gda2020()
+
+crs_gda2020_cartesian()
+
+crs_gda2020_albers()
 }
 \value{
 A simple features CRS
@@ -14,4 +20,10 @@ GDA2020 is the official CRS used by the
 \href{https://www.icsm.gov.au/gda2020}{Commonwealth} and
 \href{https://www.spatial.nsw.gov.au/surveying/geodesy/gda2020}{NSW}.
 Geospatial data in this package uses GDA2020.
+}
+\details{
+\code{crs_gda2020} is EPSG 7844 with axes specified in degrees.
+\code{crs_gda2020_cartesian} is EPSG 7842 with Cartesian axes in metres.
+\code{crs_gda2020_albers} is EPSG 9473, the Albers equal area projection used for
+area computation.
 }

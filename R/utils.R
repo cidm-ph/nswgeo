@@ -59,11 +59,26 @@ normalise_postcodes <- function(codes) {
 #' [NSW](https://www.spatial.nsw.gov.au/surveying/geodesy/gda2020).
 #' Geospatial data in this package uses GDA2020.
 #'
+#' `crs_gda2020` is EPSG 7844 with axes specified in degrees.
+#' `crs_gda2020_cartesian` is EPSG 7842 with Cartesian axes in metres.
+#' `crs_gda2020_albers` is EPSG 9473, the Albers equal area projection used for
+#' area computation.
+#'
 #' @return A simple features CRS
 #'
 #' @export
 crs_gda2020 <- function() {
   sf::st_crs("EPSG:7844")
+}
+#' @rdname crs_gda2020
+#' @export
+crs_gda2020_cartesian <- function() {
+  sf::st_crs("EPSG:7842")
+}
+#' @rdname crs_gda2020
+#' @export
+crs_gda2020_albers <- function() {
+  sf::st_crs("EPSG:9473")
 }
 
 #' New South Wales outline with or without related territories
