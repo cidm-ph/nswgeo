@@ -13,6 +13,7 @@
   (`crs_gda2020_cartesian()` and `crs_gda2020_albers()`).
 * Add concordance file for ABS postal areas and local health districts
   (`nswgeo::poa_lhd_concordance`).
+* Lower supported R version to 4.1.
 
 # nswgeo 0.3.3
 
