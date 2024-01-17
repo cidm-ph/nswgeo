@@ -46,12 +46,14 @@
 
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="development version" id="nswgeo-development-version">nswgeo (development version)<a class="anchor" aria-label="anchor" href="#nswgeo-development-version"></a></h2>
-<ul><li>Add Primary Health Network (PHN) map data as <code>phn</code> dataset.</li>
-<li>Fixed the <code>poa_nsw</code> dataset to avoid strange geometries near the state border.</li>
+<ul><li>Add Primary Health Network (PHN) map data as <code><a href="../reference/phn.html">nswgeo::phn</a></code> dataset.</li>
+<li>Fixed the <code><a href="../reference/nsw_admin.html">nswgeo::poa_nsw</a></code> dataset to avoid strange geometries near the state border.</li>
 <li>Added geometries for Lord Howe Island, Australian Capital Territory, and Jervis Bay Territory, and a utility function <code><a href="../reference/outline.html">outline()</a></code> for using them.</li>
-<li>Add Greater Sydney boundary as <code>sydney</code> dataset.</li>
-<li>Slightly increase the resolution to 750 m instead of 1 km.</li>
+<li>Add Greater Sydney boundary as <code><a href="../reference/nsw.html">nswgeo::sydney</a></code> dataset.</li>
+<li>Slightly increase the resolution of most maps to 750 m instead of 1 km.</li>
 <li>Update to the 2023 ASGS release, including the 2023 LGA shapefile. Note that this means some field names changed (e.g. <code>LGA_NAME_2021</code> to <code>LGA_NAME_2023</code>).</li>
+<li>Add new coordinate system references relevant for Australia (<code><a href="../reference/crs_gda2020.html">crs_gda2020_cartesian()</a></code> and <code><a href="../reference/crs_gda2020.html">crs_gda2020_albers()</a></code>).</li>
+<li>Add concordance file for ABS postal areas and local health districts (<code><a href="../reference/poa_lhd_concordance.html">nswgeo::poa_lhd_concordance</a></code>).</li>
 </ul></div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.3.3" id="nswgeo-033">nswgeo 0.3.3<a class="anchor" aria-label="anchor" href="#nswgeo-033"></a></h2><p class="text-muted">CRAN release: 2023-05-05</p>
