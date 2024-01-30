@@ -1,3 +1,5 @@
+# nswgeo (development version)
+
 # nswgeo 0.4.0
 
 * Added some new maps:
