@@ -1,7 +1,7 @@
 library(sf)
 library(dplyr)
 
-abs_geopackage <- "data-raw/ASGS_Ed3_Non_ABS_Structures_GDA2020_GPKG_updated_2023/ASGS_Ed3_Non_ABS_Structures_GDA2020_updated_2023.gpkg"
+abs_geopackage <- "data-raw/ASGS_Ed3_Non_ABS_Structures_GDA2020_GPKG_updated_2024/ASGS_Ed3_Non_ABS_Structures_GDA2020_updated_2024.gpkg"
 data_path <- "data-raw/MyHospitals_Public/NSW_LHD_Boundaries.shp"
 
 stopifnot(
@@ -33,3 +33,5 @@ poa_lhd_concordance <- poa_lhd |>
   mutate(FRAC_INCLUDED = round(FRAC_INCLUDED, digits = 4))
 
 usethis::use_data(poa_lhd_concordance, overwrite = TRUE)
+poa_lhd_concordance$FRAC_INCLUDED <- format(poa_lhd_concordance$FRAC_INCLUDED, scientific = FALSE)
+write.csv(poa_lhd_concordance, "data-raw/poa_lhd_concordance.csv", row.names = FALSE, quote = FALSE)
