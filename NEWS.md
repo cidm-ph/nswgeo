@@ -1,5 +1,8 @@
 # nswgeo (development version)
 
+* Updated to the 2024 ASGS release, including the 2024 LGA shapefile. Note that
+  this means some field names changed (e.g. `LGA_NAME_2023` to `LGA_NAME_2024`).
+
 # nswgeo 0.4.0
 
 * Added some new maps:

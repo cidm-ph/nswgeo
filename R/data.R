@@ -80,7 +80,7 @@
 #'
 #' @examples
 #' library(ggplot2)
-#' ggplot(lga_nsw) + geom_sf(aes(fill = LGA_NAME_2023), show.legend = FALSE)
+#' ggplot(lga_nsw) + geom_sf(aes(fill = LGA_NAME_2024), show.legend = FALSE)
 #'
 #' library(sf)
 #' sf_use_s2(FALSE)
