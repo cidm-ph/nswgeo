@@ -10,7 +10,7 @@ An object of class \code{sf} (inherits from \code{tbl_df}, \code{tbl}, \code{dat
 \source{
 Spatial Services, Department of Customer Service NSW.
 "MyHospitals_Public",
-\url{https://portal.spatial.nsw.gov.au/portal/home/item.html?id=78df4a3e987b4e7e8b241ee5bfeee358}, accessed 4 May 2023.
+\url{https://portal.spatial.nsw.gov.au/portal/home/item.html?id=5a1e5dd9b38245d3b976c21b56fd6185}, accessed 4 May 2023.
 Republished from
 NSW Ministry of Health, "Map of local health districts",
 \url{https://www.health.nsw.gov.au/lhd/Pages/lhd-maps.aspx}.
