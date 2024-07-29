@@ -106,9 +106,10 @@ outline <- function(lord_howe_island = FALSE, act_cutout = FALSE, jervis_bay = T
   crs_nsw <- sf::st_crs(nswgeo::nsw)
 
   if (act_cutout) {
+    act <- sf::st_transform(nswgeo::act, crs_working)
     base <- base |>
       sf::st_transform(crs_working) |>
-      sf::st_difference(nswgeo::act) |>
+      sf::st_difference(act) |>
       sf::st_transform(crs_nsw)
   }
 

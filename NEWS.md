@@ -2,6 +2,7 @@
 
 * Updated to the 2024 ASGS release, including the 2024 LGA shapefile. Note that
   this means some field names changed (e.g. `LGA_NAME_2023` to `LGA_NAME_2024`).
+* Fixed bug in ACT cut out for `outline()`.
 
 # nswgeo 0.4.0
 
