@@ -1,66 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://cidm-ph.github.io/nswgeo/404.html</loc>
-  </url>
-  <url>
-    <loc>https://cidm-ph.github.io/nswgeo/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>https://cidm-ph.github.io/nswgeo/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>https://cidm-ph.github.io/nswgeo/authors.html</loc>
-  </url>
-  <url>
-    <loc>https://cidm-ph.github.io/nswgeo/index.html</loc>
-  </url>
-  <url>
-    <loc>https://cidm-ph.github.io/nswgeo/news/index.html</loc>
-  </url>
-  <url>
-    <loc>https://cidm-ph.github.io/nswgeo/reference/australia.html</loc>
-  </url>
-  <url>
-    <loc>https://cidm-ph.github.io/nswgeo/reference/covid_cases_nsw.html</loc>
-  </url>
-  <url>
-    <loc>https://cidm-ph.github.io/nswgeo/reference/crs_gda2020.html</loc>
-  </url>
-  <url>
-    <loc>https://cidm-ph.github.io/nswgeo/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>https://cidm-ph.github.io/nswgeo/reference/lhd.html</loc>
-  </url>
-  <url>
-    <loc>https://cidm-ph.github.io/nswgeo/reference/normalise_postcodes.html</loc>
-  </url>
-  <url>
-    <loc>https://cidm-ph.github.io/nswgeo/reference/normalise_state_names.html</loc>
-  </url>
-  <url>
-    <loc>https://cidm-ph.github.io/nswgeo/reference/nsw.html</loc>
-  </url>
-  <url>
-    <loc>https://cidm-ph.github.io/nswgeo/reference/nsw_admin.html</loc>
-  </url>
-  <url>
-    <loc>https://cidm-ph.github.io/nswgeo/reference/nswgeo-package.html</loc>
-  </url>
-  <url>
-    <loc>https://cidm-ph.github.io/nswgeo/reference/outline.html</loc>
-  </url>
-  <url>
-    <loc>https://cidm-ph.github.io/nswgeo/reference/phn.html</loc>
-  </url>
-  <url>
-    <loc>https://cidm-ph.github.io/nswgeo/reference/poa_lhd_concordance.html</loc>
-  </url>
-  <url>
-    <loc>https://cidm-ph.github.io/nswgeo/reference/postcodes.html</loc>
-  </url>
-  <url>
-    <loc>https://cidm-ph.github.io/nswgeo/reference/suburbs.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://cidm-ph.github.io/nswgeo/404.html</loc></url>
+<url><loc>https://cidm-ph.github.io/nswgeo/LICENSE-text.html</loc></url>
+<url><loc>https://cidm-ph.github.io/nswgeo/LICENSE.html</loc></url>
+<url><loc>https://cidm-ph.github.io/nswgeo/authors.html</loc></url>
+<url><loc>https://cidm-ph.github.io/nswgeo/index.html</loc></url>
+<url><loc>https://cidm-ph.github.io/nswgeo/news/index.html</loc></url>
+<url><loc>https://cidm-ph.github.io/nswgeo/reference/australia.html</loc></url>
+<url><loc>https://cidm-ph.github.io/nswgeo/reference/covid_cases_nsw.html</loc></url>
+<url><loc>https://cidm-ph.github.io/nswgeo/reference/crs_gda2020.html</loc></url>
+<url><loc>https://cidm-ph.github.io/nswgeo/reference/index.html</loc></url>
+<url><loc>https://cidm-ph.github.io/nswgeo/reference/lhd.html</loc></url>
+<url><loc>https://cidm-ph.github.io/nswgeo/reference/normalise_postcodes.html</loc></url>
+<url><loc>https://cidm-ph.github.io/nswgeo/reference/normalise_state_names.html</loc></url>
+<url><loc>https://cidm-ph.github.io/nswgeo/reference/nsw.html</loc></url>
+<url><loc>https://cidm-ph.github.io/nswgeo/reference/nsw_admin.html</loc></url>
+<url><loc>https://cidm-ph.github.io/nswgeo/reference/nswgeo-package.html</loc></url>
+<url><loc>https://cidm-ph.github.io/nswgeo/reference/outline.html</loc></url>
+<url><loc>https://cidm-ph.github.io/nswgeo/reference/phn.html</loc></url>
+<url><loc>https://cidm-ph.github.io/nswgeo/reference/poa_lhd_concordance.html</loc></url>
+<url><loc>https://cidm-ph.github.io/nswgeo/reference/postcodes.html</loc></url>
+<url><loc>https://cidm-ph.github.io/nswgeo/reference/suburbs.html</loc></url>
 </urlset>
+
