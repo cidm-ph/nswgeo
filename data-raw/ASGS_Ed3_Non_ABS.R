@@ -1,13 +1,22 @@
-abs_geopackage <- "data-raw/ASGS_Ed3_Non_ABS_Structures_GDA2020_GPKG_updated_2023/ASGS_Ed3_Non_ABS_Structures_GDA2020_updated_2023.gpkg"
+abs_geopackage_name <- "ASGS_Ed3_Non_ABS_Structures_GDA2020_GPKG_updated_2024"
+abs_geopackage_gpkg <- "ASGS_Ed3_Non_ABS_Structures_GDA2020_updated_2024.gpkg"
+abs_geopackage <- file.path("data-raw", abs_geopackage_name, abs_geopackage_gpkg)
+asgs_3e_url <-
+  "https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026/access-and-downloads/digital-boundary-files/ASGS_Ed3_Non_ABS_Structures_GDA2020_updated_2024.zip"
 
 if (!file.exists(abs_geopackage)) {
-  # https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3
+  # https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026/access-and-downloads/digital-boundary-files
   message("Downloading the source dataset from the ABS website...")
-  asgs_3e_url <- "https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026/access-and-downloads/digital-boundary-files/ASGS_Ed3_Non_ABS_Structures_GDA2020_updated_2023.zip"
-  options(timeout = max(1000L, getOption("timeout")))
-  download.file(asgs_3e_url, destfile = "data-raw/ASGS_Ed3_Non_ABS_Structures_GDA2020_GPKG_updated_2023.zip")
+  abs_geopackage_path <- file.path("data-raw", paste0(abs_geopackage_name, ".zip"))
+  # options(timeout = max(2000L, getOption("timeout")))
+  # download.file(asgs_3e_url, destfile = abs_geopackage_path)
+  httr2::request(asgs_3e_url) |>
+    httr2::req_progress() |>
+    httr2::req_retry(max_tries = 3) |>
+    httr2::req_options(http_version = 0, timeout = 2000L) |>
+    httr2::req_perform(path = abs_geopackage_path)
 
-  unzip("data-raw/ASGS_Ed3_Non_ABS_Structures_GDA2020_GPKG_updated_2023.zip", exdir = "data-raw/ASGS_Ed3_Non_ABS_Structures_GDA2020_GPKG_updated_2023")
+  unzip(abs_geopackage_path, exdir = file.path("data-raw", abs_geopackage_name))
   stopifnot(file.exists(abs_geopackage))
 }
 
@@ -23,7 +32,7 @@ tolerance_m <- 750L
 # list layers available
 st_layers(abs_geopackage)
 
-lga <- read_sf(abs_geopackage, layer = "LGA_2023_AUST_GDA2020")
+lga <- read_sf(abs_geopackage, layer = "LGA_2024_AUST_GDA2020")
 
 crs_nsw <- sf::st_crs(7844) # GDA2020
 crs_working <- sf::st_crs("+proj=eqc +lat_ts=34 units=m")
@@ -37,7 +46,7 @@ crs_working <- sf::st_crs("+proj=eqc +lat_ts=34 units=m")
 
 # The ABS LGA region of "Unincorporated NSW" includes both Lord Howe Island
 # and the Unincorporated Far West Region. Separate these.
-nsw_hires_ui <- filter(lga, LGA_NAME_2023 == "Unincorporated NSW")
+nsw_hires_ui <- filter(lga, LGA_NAME_2024 == "Unincorporated NSW")
 bb <- st_bbox(nsw_hires_ui)
 bb["xmax"] <- 150
 ufwr_hires <- st_intersection(
@@ -56,7 +65,7 @@ usethis::use_data(lhi, overwrite = TRUE)
 
 # The ABS LGA region of "Unincorp. Other Territories" includes both Norfolk
 # Island and the Jervis Bay Territory, of which we only need the latter.
-aus_hires_ui <- filter(lga, LGA_NAME_2023 == "Unincorp. Other Territories")
+aus_hires_ui <- filter(lga, LGA_NAME_2024 == "Unincorp. Other Territories")
 bb <- st_bbox(aus_hires_ui)
 bb["xmax"] <- 153
 jbt_hires <- st_intersection(
@@ -68,7 +77,7 @@ object.size(jbt)
 usethis::use_data(jbt, overwrite = TRUE)
 
 lga_nsw <- lga |>
-  filter(STATE_NAME_2021 == "New South Wales", LGA_NAME_2023 != "Unincorporated NSW") |>
+  filter(STATE_NAME_2021 == "New South Wales", LGA_NAME_2024 != "Unincorporated NSW") |>
   rbind(ufwr_hires) |>
   st_transform(crs_working) |>
   st_simplify(dTolerance = tolerance_m) |>
@@ -83,7 +92,7 @@ object.size(act)
 usethis::use_data(act, overwrite = TRUE)
 
 nsw_hires <- lga |>
-  filter(STATE_NAME_2021 == "New South Wales", LGA_NAME_2023 != "Unincorporated NSW") |>
+  filter(STATE_NAME_2021 == "New South Wales", LGA_NAME_2024 != "Unincorporated NSW") |>
   rbind(ufwr_hires, jbt_hires) |>
   st_transform(crs_working) |>
   st_union() |>
@@ -95,14 +104,6 @@ nsw <- nsw_hires |>
 object.size(nsw_hires)
 object.size(nsw)
 usethis::use_data(nsw, overwrite = TRUE)
-
-# sal <- read_sf(abs_geopackage, layer = "SAL_2021_AUST_GDA2020")
-# sal_nsw <- sal |>
-#   st_transform(crs_working) |>
-#   filter(STATE_NAME_2021 == "New South Wales") |>
-#   st_simplify(dTolerance = tolerance_m) |>
-#   st_transform(crs_nsw)
-# object.size(sal_nsw)
 
 poa <- read_sf(abs_geopackage, layer = "POA_2021_AUST_GDA2020")
 # Check for overlap of the interiors of the geometries to exclude postal areas

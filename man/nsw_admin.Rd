@@ -11,8 +11,8 @@ An object of class \code{sf} (inherits from \code{tbl_df}, \code{tbl}, \code{dat
 An object of class \code{sf} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 644 rows and 7 columns.
 }
 \source{
-Australian Bureau of Statistics. "Australian Statistical Geography Standard (ASGS) Edition 3." ABS, Jul2021-Jun2026,
-\url{https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026}, accessed 27 September 2022.
+Australian Bureau of Statistics. "Australian Statistical Geography Standard (ASGS) Edition 3." ABS, Jul2021-Jun2026 (24 July 2024 update),
+\url{https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026}, accessed 29 July 2024.
 
 The original dataset is published under the \href{https://creativecommons.org/licenses/by/4.0/}{Creative Commons Attribution 4.0 International} licence, © Commonwealth of Australia 2021.
 }

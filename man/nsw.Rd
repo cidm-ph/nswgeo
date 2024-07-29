@@ -20,8 +20,8 @@ An object of class \code{sfc_MULTIPOLYGON} (inherits from \code{sfc}) of length 
 An object of class \code{sfc_POLYGON} (inherits from \code{sfc}) of length 1.
 }
 \source{
-Australian Bureau of Statistics. "Australian Statistical Geography Standard (ASGS) Edition 3." ABS, Jul2021-Jun2026,
-\url{https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026}, accessed 27 September 2022.
+Australian Bureau of Statistics. "Australian Statistical Geography Standard (ASGS) Edition 3." ABS, Jul2021-Jun2026 (24 July 2024 update),
+\url{https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026}, accessed 29 July 2024.
 
 The original dataset is published under the \href{https://creativecommons.org/licenses/by/4.0/}{Creative Commons Attribution 4.0 International} licence, © Commonwealth of Australia 2021.
 }
