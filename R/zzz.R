@@ -6,7 +6,7 @@
   )
   cartographer::register_map(
     "nswgeo.lga", nswgeo::lga_nsw,
-    feature_column = "LGA_NAME_2023",
+    feature_column = "LGA_NAME_2024",
     outline = sf::st_sf(geometry = nswgeo::nsw)
   )
   cartographer::register_map(
