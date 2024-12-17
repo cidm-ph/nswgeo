@@ -1,3 +1,5 @@
+# nswgeo (development version)
+
 # nswgeo 0.5.0
 
 * Updated to the 2024 ASGS release, including the 2024 LGA shapefile. Note that
