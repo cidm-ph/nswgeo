@@ -48,5 +48,12 @@ poa_lhd_concordance |>
   filter(lhd_name == "Murrumbidgee", FRAC_INCLUDED > 0.005) |>
   arrange(desc(FRAC_INCLUDED)) |>
   pull(POA_NAME_2021)
+
+# extract the main LHD for each postcode
+poa_lhd_concordance |>
+  arrange(desc(FRAC_INCLUDED)) |>
+  slice_head(n = 1, by = POA_NAME_2021) |>
+  mutate(postcode = POA_NAME_2021, lhd = lhd_name, .keep = "none") |>
+  as_tibble()
 }
 \keyword{datasets}
