@@ -13,8 +13,8 @@ status](https://www.r-pkg.org/badges/version/nswgeo)](https://CRAN.R-project.org
 <!-- badges: end -->
 
 A collection of geospatial datasets and map plotting helpers for working
-with New South Wales maps. The maps are registered with `{cartographer}`
-and so are compatible with `{ggautomap}`.
+with New South Wales maps. The maps are registered with
+`{cartographer}`.
 
 ## Installation
 
@@ -66,3 +66,20 @@ covid_cases_nsw |>
 ```
 
 <img src="man/figures/README-cartographer-1.png" width="100%" />
+
+## A note on resolution
+
+Some of the source datasets are very high resolution and would make this
+package too large if they were bundled. Accordingly, most data has been
+processed to reduce the resolution. You can see exactly what was done by
+looking at the scripts in `data-raw/`.
+
+If you need higher resolution shapes, such as when zooming into specific
+postal areas, you’re better off using the original datasets directly.
+
+## Other Australian data
+
+- [`strayr`](https://runapp-aus.github.io/strayr/) helps with working
+  with data from the Australian Bureau of Statistics (ABS).
+- [`absmapsdata`](https://github.com/wfmackey/absmapsdata) contains some
+  processed ABS geospatial data.

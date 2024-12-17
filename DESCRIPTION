@@ -27,6 +27,7 @@ Imports:
 Suggests: 
     dplyr (>= 1.0.0),
     ggplot2,
+    httr2,
     nngeo,
     readr,
     stringr

@@ -1,4 +1,34 @@
 url: https://cidm-ph.github.io/nswgeo/
 template:
   bootstrap: 5
+  bootswatch: journal
+  theme: solarized-light
 
+reference:
+- title: Map data
+  desc: >
+    Map data included with the package. This is normally a low resolution version
+    of the original data. Intended for use with `sf`.
+  contents:
+  - australia
+  - lhd
+  - lga_nsw
+  - nsw
+  - phn
+- title: Tabular spatial data
+  contents:
+  - poa_lhd_concordance
+  - postcodes
+  - suburbs
+- title: Mapping helpers
+  contents:
+  - crs_gda2020
+  - outline
+- title: Data cleaning
+  contents:
+  - normalise_postcodes
+  - normalise_state_names
+- title: Package
+  contents:
+  - nswgeo-package
+  - covid_cases_nsw

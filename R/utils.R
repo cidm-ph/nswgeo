@@ -23,8 +23,11 @@
 #' @examples
 #' normalise_state_names(c("nsw", "VIC", "overseas", "Queensland"))
 normalise_state_names <- function(names) {
-  cartographer::resolve_feature_names(names, feature_type = "nswgeo.states",
-                                      unmatched = "pass")
+  cartographer::resolve_feature_names(
+    names,
+    feature_type = "nswgeo.states",
+    unmatched = "pass"
+  )
 }
 
 #' Normalise postal codes
