@@ -63,9 +63,11 @@ normalise_postcodes <- function(codes) {
 #' Geospatial data in this package uses GDA2020.
 #'
 #' `crs_gda2020` is EPSG 7844 with axes specified in degrees.
+#'
 #' `crs_gda2020_cartesian` is EPSG 7842 with Cartesian axes in metres.
-#' `crs_gda2020_albers` is EPSG 9473, the Albers equal area projection used for
-#' area computation.
+#'
+#' `crs_gda2020_albers` is EPSG 9473, the Albers equal area projection used,
+#'   making it suitable for area computation.
 #'
 #' @return A simple features CRS
 #'

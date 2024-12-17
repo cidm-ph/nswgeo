@@ -78,12 +78,14 @@
 #' The geometries have been simplified with a tolerance of 750 m to reduce the
 #' level of detail.
 #'
+#' @seealso [poa_lhd_concordance]
 #' @examples
 #' library(ggplot2)
 #' ggplot(lga_nsw) + geom_sf(aes(fill = LGA_NAME_2024), show.legend = FALSE)
 #'
 #' library(sf)
 #' sf_use_s2(FALSE)
+#'
 #' # cut out part of the postcode dataset (it's quite large)
 #' bbox <- st_bbox(c(xmin = 142, xmax = 147, ymin = -33, ymax = -30)) |>
 #'  st_as_sfc(crs = crs_gda2020())
@@ -91,6 +93,13 @@
 #'   ggplot() +
 #'   geom_sf() +
 #'   geom_sf_text(aes(label = POA_CODE_2021), size = 4)
+#'
+#' # some postcodes extend past the state boundary
+#' ggplot(nswgeo::poa_nsw) +
+#'   geom_sf(aes(fill = as.integer(POA_NAME_2021)), colour = NA) +
+#'   geom_sf(fill = NA, colour = "red", linewidth = .5, data = nswgeo::nsw) +
+#'   scale_fill_viridis_b("Postal area", option = "H") +
+#'   theme_void()
 #' @source
 #'   Australian Bureau of Statistics. "Australian Statistical Geography Standard (ASGS) Edition 3." ABS, Jul2021-Jun2026 (24 July 2024 update),
 #'   \url{https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026}, accessed 29 July 2024.
@@ -116,6 +125,7 @@
 #'
 #'   The original dataset is published under the [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) licence,
 #'   © State of New South Wales NSW Ministry of Health 2023. For current information go to \url{https://www.health.nsw.gov.au}.
+#' @seealso [poa_lhd_concordance]
 #' @examples
 #' library(ggplot2)
 #' ggplot(lhd) + geom_sf(aes(fill = lhd_name), show.legend = FALSE)
@@ -169,6 +179,13 @@
 #'   filter(lhd_name == "Murrumbidgee", FRAC_INCLUDED > 0.005) |>
 #'   arrange(desc(FRAC_INCLUDED)) |>
 #'   pull(POA_NAME_2021)
+#'
+#' # extract the main LHD for each postcode
+#' poa_lhd_concordance |>
+#'   arrange(desc(FRAC_INCLUDED)) |>
+#'   slice_head(n = 1, by = POA_NAME_2021) |>
+#'   mutate(postcode = POA_NAME_2021, lhd = lhd_name, .keep = "none") |>
+#'   as_tibble()
 "poa_lhd_concordance"
 
 #' Postal codes and localities of New South Wales.

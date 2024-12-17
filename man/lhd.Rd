@@ -29,4 +29,7 @@ level of detail.
 library(ggplot2)
 ggplot(lhd) + geom_sf(aes(fill = lhd_name), show.legend = FALSE)
 }
+\seealso{
+\link{poa_lhd_concordance}
+}
 \keyword{datasets}

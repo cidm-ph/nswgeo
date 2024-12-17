@@ -44,6 +44,7 @@ ggplot(lga_nsw) + geom_sf(aes(fill = LGA_NAME_2024), show.legend = FALSE)
 
 library(sf)
 sf_use_s2(FALSE)
+
 # cut out part of the postcode dataset (it's quite large)
 bbox <- st_bbox(c(xmin = 142, xmax = 147, ymin = -33, ymax = -30)) |>
  st_as_sfc(crs = crs_gda2020())
@@ -51,5 +52,15 @@ st_crop(poa_nsw, bbox) |>
   ggplot() +
   geom_sf() +
   geom_sf_text(aes(label = POA_CODE_2021), size = 4)
+
+# some postcodes extend past the state boundary
+ggplot(nswgeo::poa_nsw) +
+  geom_sf(aes(fill = as.integer(POA_NAME_2021)), colour = NA, n.breaks = 5) +
+  geom_sf(fill = NA, colour = "red", linewidth = .5, data = nswgeo::nsw) +
+  scale_fill_viridis_b("Postal area", option = "H") +
+  theme_void()
+}
+\seealso{
+\link{poa_lhd_concordance}
 }
 \keyword{datasets}
