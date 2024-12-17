@@ -1,5 +1,5 @@
-This update adds some new data, and slightly increases the resolution of some of the included
-map data. The compressed package size is still under 1 MB in my local build.
+This is primarily an update of one of the main datasets, with some improvements
+to documentation.
 
 ## R CMD check results
 

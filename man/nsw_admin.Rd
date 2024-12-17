@@ -55,7 +55,7 @@ st_crop(poa_nsw, bbox) |>
 
 # some postcodes extend past the state boundary
 ggplot(nswgeo::poa_nsw) +
-  geom_sf(aes(fill = as.integer(POA_NAME_2021)), colour = NA, n.breaks = 5) +
+  geom_sf(aes(fill = as.integer(POA_NAME_2021)), colour = NA) +
   geom_sf(fill = NA, colour = "red", linewidth = .5, data = nswgeo::nsw) +
   scale_fill_viridis_b("Postal area", option = "H") +
   theme_void()
