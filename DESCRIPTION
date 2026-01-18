@@ -1,14 +1,15 @@
 Package: nswgeo
 Title: Geospatial Data and Maps for New South Wales, Australia
 Version: 0.5.0.9000
-Authors@R: 
+Authors@R:
     c(person(given = "Carl",
              family = "Suster",
-             email = "Carl.Suster@health.nsw.gov.au",
+             email = "carl.suster@sydney.edu.au",
              role = c("aut", "cre"),
              comment = c(ORCID = "0000-0001-7021-9380")),
       person("Western Sydney Local Health District, NSW Health",
-             role = "cph"))
+             role = "cph",
+             comment = "2022-2025"))
 Description: Geospatial data for creating maps of New South Wales (NSW),
   Australia, and some helpers to work with common problems like normalising
   postcodes. Registers its data with 'cartographer'.
@@ -18,13 +19,13 @@ Encoding: UTF-8
 Language: en-GB
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.2
-Depends: 
+RoxygenNote: 7.3.3
+Depends:
     R (>= 4.1),
-Imports: 
+Imports:
     cartographer (>= 0.2),
     sf (>= 1.0)
-Suggests: 
+Suggests:
     dplyr (>= 1.0.0),
     ggplot2,
     httr2,
