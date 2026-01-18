@@ -1,0 +1,151 @@
+# nswgeo
+
+A collection of geospatial datasets and map plotting helpers for working
+with New South Wales maps. The maps are registered with
+[cartographer](https://github.com/cidm-ph/cartographer). This package is
+not an official publication, merely a collection of handy data from
+public sources.
+
+## Installation
+
+You can install nswgeo like so:
+
+``` r
+# CRAN release
+install.packages('nswgeo')
+
+# development version
+install.packages('nswgeo', repos = c('https://cidm-ph.r-universe.dev', 'https://cloud.r-project.org'))
+```
+
+## Examples
+
+The data can be used directly with ggplot:
+
+``` r
+library(nswgeo)
+library(ggplot2)
+
+ggplot(nswgeo::nsw) +
+  geom_sf(fill = "white", data = nswgeo::australia) +
+  geom_sf(fill = "#9BCBEB", colour = NA) +
+  geom_sf(fill = NA, colour = "white", data = nswgeo::lhd) +
+  geom_sf(fill = NA, colour = "#002664", linewidth = .8) +
+  annotate(
+    "text", x = 144, y = -27, label = "New South Wales",
+    angle = -5, size = 5, fontface = "italic", colour = "#002664"
+  ) +
+  coord_sf(crs = crs_gda2020_albers(), default_crs = crs_gda2020()) +
+  theme_minimal() +
+  theme(
+    panel.background = element_rect(fill = "grey97", colour = NA),
+    axis.title = element_blank(),
+  )
+```
+
+![](reference/figures/README-ggplot-1.png)
+
+Alternatively, the data can be accessed through
+[cartographer](https://github.com/cidm-ph/cartographer):
+
+``` r
+library(cartographer)
+head(covid_cases_nsw)
+#> # A tibble: 6 × 5
+#>   postcode lga       lhd                 year type 
+#>   <chr>    <chr>     <chr>              <int> <chr>
+#> 1 2427     Mid-Coast Hunter New England  2022 B    
+#> 2 2761     Blacktown Western Sydney      2021 A    
+#> 3 2426     Mid-Coast Hunter New England  2022 B    
+#> 4 2148     Blacktown Western Sydney      2022 B    
+#> 5 2768     Blacktown Western Sydney      2021 A    
+#> 6 2766     Blacktown Western Sydney      2021 B
+
+covid_cases_nsw |>
+  dplyr::count(lga) |>
+  add_geometry(lga, feature_type = "nswgeo.lga") |>
+  ggplot() +
+  geom_sf(aes(fill = n)) +
+  geom_sf(fill = NA, data = map_sf("nswgeo.lga")) +
+  scale_fill_viridis_b("Cases") +
+  theme_void()
+```
+
+![](reference/figures/README-cartographer-1.png)
+
+## A note on resolution
+
+Some of the source datasets are very high resolution and would make this
+package too large if they were bundled. Accordingly, most data has been
+processed to reduce the resolution. You can see exactly what was done by
+looking at the scripts in `data-raw/`, which also help to download
+source data.
+
+If you need higher resolution shapes, such as when zooming into specific
+postal areas, you’re better off using the original datasets directly.
+
+## Other Australian data
+
+- [`strayr`](https://runapp-aus.github.io/strayr/) helps with working
+  with data from the Australian Bureau of Statistics (ABS).
+- [`absmapsdata`](https://github.com/wfmackey/absmapsdata) contains some
+  processed ABS geospatial data.
+
+# Package index
+
+## Map data
+
+Map data included with the package. This is normally a low resolution
+version of the original data. Intended for use with `sf`.
+
+- [`australia`](https://cidm-ph.github.io/nswgeo/reference/australia.md)
+  [`states`](https://cidm-ph.github.io/nswgeo/reference/australia.md) :
+  Geospatial data of the Australian state and territory administrative
+  boundaries.
+- [`lhd`](https://cidm-ph.github.io/nswgeo/reference/lhd.md) : Local
+  Health Districts of NSW.
+- [`lga_nsw`](https://cidm-ph.github.io/nswgeo/reference/nsw_admin.md)
+  [`poa_nsw`](https://cidm-ph.github.io/nswgeo/reference/nsw_admin.md) :
+  Geospatial data of the New South Wales administrative boundaries.
+- [`nsw`](https://cidm-ph.github.io/nswgeo/reference/nsw.md)
+  [`act`](https://cidm-ph.github.io/nswgeo/reference/nsw.md)
+  [`lhi`](https://cidm-ph.github.io/nswgeo/reference/nsw.md)
+  [`jbt`](https://cidm-ph.github.io/nswgeo/reference/nsw.md)
+  [`sydney`](https://cidm-ph.github.io/nswgeo/reference/nsw.md) :
+  Outlines of New South Wales and relevant territories.
+- [`phn`](https://cidm-ph.github.io/nswgeo/reference/phn.md) : Primary
+  Health Network boundaries of New South Wales
+
+## Tabular spatial data
+
+- [`poa_lhd_concordance`](https://cidm-ph.github.io/nswgeo/reference/poa_lhd_concordance.md)
+  : Concordance between postal areas and local health districts.
+- [`postcodes`](https://cidm-ph.github.io/nswgeo/reference/postcodes.md)
+  : Postal codes and localities of New South Wales.
+- [`suburbs`](https://cidm-ph.github.io/nswgeo/reference/suburbs.md) :
+  Suburbs of New South Wales.
+
+## Mapping helpers
+
+- [`crs_gda2020()`](https://cidm-ph.github.io/nswgeo/reference/crs_gda2020.md)
+  [`crs_gda2020_cartesian()`](https://cidm-ph.github.io/nswgeo/reference/crs_gda2020.md)
+  [`crs_gda2020_albers()`](https://cidm-ph.github.io/nswgeo/reference/crs_gda2020.md)
+  : Coordinate reference system for Australia
+- [`outline()`](https://cidm-ph.github.io/nswgeo/reference/outline.md) :
+  New South Wales outline with or without related territories
+
+## Data cleaning
+
+- [`normalise_postcodes()`](https://cidm-ph.github.io/nswgeo/reference/normalise_postcodes.md)
+  : Normalise postal codes
+- [`normalise_state_names()`](https://cidm-ph.github.io/nswgeo/reference/normalise_state_names.md)
+  : Normalise state names from abbreviations
+
+## Package
+
+- [`nswgeo`](https://cidm-ph.github.io/nswgeo/reference/nswgeo-package.md)
+  [`nswgeo-package`](https://cidm-ph.github.io/nswgeo/reference/nswgeo-package.md)
+  : Geospatial Tools for New South Wales
+- [`covid_cases_nsw`](https://cidm-ph.github.io/nswgeo/reference/covid_cases_nsw.md)
+  : Small sample of COVID-19 cases in NSW for testing and demonstration.
+
