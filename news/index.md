@@ -2,6 +2,9 @@
 
 ## nswgeo (development version)
 
+- Fix an issue with the Lord Howe Isand geometry missing its CRS in
+  [`outline()`](https://cidm-ph.github.io/nswgeo/reference/outline.md).
+
 ## nswgeo 0.5.0
 
 CRAN release: 2024-12-17
