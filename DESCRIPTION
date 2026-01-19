@@ -27,7 +27,7 @@ Imports:
     sf (>= 1.0)
 Suggests:
     dplyr (>= 1.0.0),
-    ggplot2,
+    ggplot2 (>= 4.0.0),
     httr2,
     nngeo,
     readr,
