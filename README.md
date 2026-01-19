@@ -54,7 +54,7 @@ ggplot(nswgeo::nsw) +
   )
 ```
 
-<img src="man/figures/README-ggplot-1.png" width="100%" />
+<img src="man/figures/README-ggplot-1.png" alt="" width="100%" />
 
 Alternatively, the data can be accessed through `{cartographer}`:
 
@@ -81,7 +81,7 @@ covid_cases_nsw |>
   theme_void()
 ```
 
-<img src="man/figures/README-cartographer-1.png" width="100%" />
+<img src="man/figures/README-cartographer-1.png" alt="" width="100%" />
 
 ## A note on resolution
 

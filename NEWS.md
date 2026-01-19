@@ -1,5 +1,7 @@
 # nswgeo (development version)
 
+* Fix an issue with the Lord Howe Isand geometry missing its CRS in `outline()`.
+
 # nswgeo 0.5.0
 
 * Updated to the 2024 ASGS release, including the 2024 LGA shapefile. Note that
