@@ -134,7 +134,7 @@ outline <- function(lord_howe_island = FALSE, act_cutout = FALSE, jervis_bay = T
   }
 
   if (lord_howe_island) {
-    sf::st_sf(geometry = rbind(base, nswgeo::lhi), name = c("NSW", "Lord Howe Island"))
+    sf::st_sf(geometry = rbind(base, nswgeo::lhi), name = c("NSW", "Lord Howe Island"), crs = sf::st_crs(base))
   } else {
     sf::st_sf(geometry = base, name = "NSW")
   }
