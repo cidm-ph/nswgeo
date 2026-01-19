@@ -40,8 +40,4 @@ A simple features data frame with the requested geometries.
 library(ggplot2)
 
 outline(lord_howe_island = TRUE) |> ggplot() + geom_sf()
-#> Error in geom_sf(): Problem while setting up geom aesthetics.
-#> ℹ Error occurred in the 1st layer.
-#> Caused by error in `attributes(lst) <- a`:
-#> ! dims [product 2] do not match the length of object [0]
 ```
