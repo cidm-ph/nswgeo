@@ -1,4 +1,4 @@
-# nswgeo (development version)
+# nswgeo 0.5.1
 
 * Fix an issue with the Lord Howe Isand geometry missing its CRS in `outline()`.
 
