@@ -24,18 +24,18 @@ tolerance_m <- 750L
 crs_nsw <- sf::st_crs(7844) # GDA2020
 crs_working <- sf::st_crs("+proj=eqc +lat_ts=34 units=m")
 
-lhd <- lhd_boundaries %>%
-  select(-all_of(na_cols)) %>%
-  st_transform(crs_working) %>%
-  st_simplify(dTolerance = tolerance_m) %>%
+lhd <- lhd_boundaries |>
+  select(-all_of(na_cols)) |>
+  st_transform(crs_working) |>
+  st_simplify(dTolerance = tolerance_m) |>
   st_transform(crs_nsw)
 object.size(lhd)
 
 usethis::use_data(lhd, overwrite = TRUE)
 
-lhd_outline <- lhd %>%
-  sf::st_union() %>%
-  nngeo::st_remove_holes() %>%
+lhd_outline <- lhd |>
+  sf::st_union() |>
+  nngeo::st_remove_holes() |>
   sf::st_make_valid()
 object.size(lhd_outline)
 

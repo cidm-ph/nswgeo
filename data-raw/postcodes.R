@@ -46,10 +46,10 @@ postcodes <- read_csv("data-raw/australian_postcodes.csv", col_types = cols(
   lgacode = col_double(),
   electorate = col_character(),
   electoraterating = col_character()
-)) %>%
-  select(postcode, locality, state, type, SA2_NAME_2016) %>%
-  filter(state == "NSW") %>%
-  mutate(special = (startsWith(postcode, "1")) | (type %in% c("LVR", "Post Office Boxes"))) %>%
+)) |>
+  select(postcode, locality, state, type, SA2_NAME_2016) |>
+  filter(state == "NSW") |>
+  mutate(special = (startsWith(postcode, "1")) | (type %in% c("LVR", "Post Office Boxes"))) |>
   select(-type)
 
 # manually confirmed on Australia Post website to remove ambiguities
@@ -58,15 +58,15 @@ manual$manual_special <- manual$manual_special == "1"
 manual$manual_old <- manual$manual_old == "1"
 manual <- rename(manual, old = manual_old)
 postcodes <-
-  left_join(postcodes, manual, by = c("postcode", "locality")) %>%
-  mutate(special = special | manual_special) %>%
+  left_join(postcodes, manual, by = c("postcode", "locality")) |>
+  mutate(special = special | manual_special) |>
   select(-manual_special)
 
 # canonicalise any special postcodes
 # note: locality is not unique, so diambiguate by using the SA2 name
 postcodes <-
-  postcodes %>%
-  group_by(SA2_NAME_2016, locality) %>%
+  postcodes |>
+  group_by(SA2_NAME_2016, locality) |>
   mutate(
     canonical = {
       # any good postcodes are candidates for the canonical choice
@@ -86,8 +86,8 @@ postcodes <-
 
       canon
     }
-  ) %>%
-  ungroup() %>%
+  ) |>
+  ungroup() |>
   select(-manual_canonical)
 
 # postcodes <-

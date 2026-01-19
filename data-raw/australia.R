@@ -23,22 +23,22 @@ crs_working <- sf::st_crs("+proj=eqc +lat_ts=34 units=m")
 # st_layers(aus_shapefile)
 aus <- read_sf(aus_shapefile, layer = "STE_2021_AUST_GDA2020")
 
-states <- aus %>%
-  filter(STE_CODE21 %in% as.character(1:8)) %>%
-  st_transform(crs_working) %>%
-  st_simplify(dTolerance = tolerance_m) %>%
+states <- aus |>
+  filter(STE_CODE21 %in% as.character(1:8)) |>
+  st_transform(crs_working) |>
+  st_simplify(dTolerance = tolerance_m) |>
   st_transform(crs_au)
 
 object.size(states)
 usethis::use_data(states, overwrite = TRUE)
 
-australia <- aus %>%
-  filter(STE_CODE21 %in% as.character(1:8)) %>%
-  st_transform(crs_working) %>%
-  st_union() %>%
-  st_remove_holes() %>%
-  st_make_valid() %>%
-  st_simplify(dTolerance = tolerance_m) %>%
+australia <- aus |>
+  filter(STE_CODE21 %in% as.character(1:8)) |>
+  st_transform(crs_working) |>
+  st_union() |>
+  st_remove_holes() |>
+  st_make_valid() |>
+  st_simplify(dTolerance = tolerance_m) |>
   st_transform(crs_au)
 
 object.size(australia)

@@ -36,9 +36,9 @@ suburbs <- read_csv(data_path, col_types = cols(
   ltocode = col_logical(),
   vgcode = col_logical(),
   wbcode = col_logical()
-)) %>%
-  select(-c(abscode, ltocode, vgcode, wbcode, centroidid, processstate, lganame, councilname)) %>%
-  select(suburbname, postcode) %>%
+)) |>
+  select(-c(abscode, ltocode, vgcode, wbcode, centroidid, processstate, lganame, councilname)) |>
+  select(suburbname, postcode) |>
   arrange(suburbname)
 
 write_csv(suburbs, "data-raw/suburbs.csv")

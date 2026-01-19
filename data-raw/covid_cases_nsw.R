@@ -10,15 +10,15 @@ location_agg <- readr::read_csv(data_path)
 
 set.seed(202210)
 
-covid_cases_nsw <- location_agg %>%
+covid_cases_nsw <- location_agg |>
   transmute(
     postcode,
     lga = stringr::str_remove(lga_name19, " \\(.*\\)$"),
     lhd = lhd_2010_name,
     year = as.integer(format(notification_date, "%Y")),
     type = c("A", "B")[as.integer(format(notification_date, "%m")) %% 2 + 1],
-  ) %>%
-  filter(lga %in% c("Walgett", "Mid-Coast", "Blacktown")) %>%
+  ) |>
+  filter(lga %in% c("Walgett", "Mid-Coast", "Blacktown")) |>
   slice_sample(n = 100)
 
 usethis::use_data(covid_cases_nsw, overwrite = TRUE)
