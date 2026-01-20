@@ -12,16 +12,16 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/cidm-ph/nswgeo/blob/main/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/cidm-ph/nswgeo/blob/v0.5.1/DESCRIPTION)
 
 Suster C (2026). *nswgeo: Geospatial Data and Maps for New South Wales,
-Australia*. R package version 0.5.0.9000,
+Australia*. R package version 0.5.1,
 <https://github.com/cidm-ph/nswgeo>.
 
     @Manual{,
       title = {nswgeo: Geospatial Data and Maps for New South Wales, Australia},
       author = {Carl Suster},
       year = {2026},
-      note = {R package version 0.5.0.9000},
+      note = {R package version 0.5.1},
       url = {https://github.com/cidm-ph/nswgeo},
     }
