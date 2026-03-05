@@ -2,6 +2,8 @@
 
 ## nswgeo (development version)
 
+- Updated suburbs dataset source (fetched from ArcGIS server).
+
 ## nswgeo 0.5.1
 
 CRAN release: 2026-01-19
