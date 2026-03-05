@@ -1,5 +1,7 @@
 # nswgeo (development version)
 
+* Updated suburbs dataset source (fetched from ArcGIS server).
+
 # nswgeo 0.5.1
 
 * Fix an issue with the Lord Howe Isand geometry missing its CRS in `outline()`.
