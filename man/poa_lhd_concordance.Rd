@@ -45,7 +45,7 @@ library(dplyr)
 
 # postcodes that overlap with Murrumbidgee LHD
 poa_lhd_concordance |>
-  filter(lhd_name == "Murrumbidgee", FRAC_INCLUDED > 0.005) |>
+  filter(LHD_NAME == "Murrumbidgee Local Health District", FRAC_INCLUDED > 0.005) |>
   arrange(desc(FRAC_INCLUDED)) |>
   pull(POA_NAME_2021)
 
@@ -53,7 +53,7 @@ poa_lhd_concordance |>
 poa_lhd_concordance |>
   arrange(desc(FRAC_INCLUDED)) |>
   slice_head(n = 1, by = POA_NAME_2021) |>
-  mutate(postcode = POA_NAME_2021, lhd = lhd_name, .keep = "none") |>
+  mutate(postcode = POA_NAME_2021, lhd = LHD_NAME, .keep = "none") |>
   as_tibble()
 }
 \keyword{datasets}
