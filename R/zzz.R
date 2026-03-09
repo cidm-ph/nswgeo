@@ -1,7 +1,8 @@
 .onLoad <- function(libname, pkgname) {
   cartographer::register_map(
-    "nswgeo.lhd", nswgeo::lhd,
-    feature_column = "lhd_name",
+    "nswgeo.lhd",
+    nswgeo::lhd,
+    feature_column = "LHD_NAME",
     outline = sf::st_sf(geometry = lhd_outline)
   )
   cartographer::register_map(

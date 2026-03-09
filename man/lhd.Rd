@@ -5,13 +5,9 @@
 \alias{lhd}
 \title{Local Health Districts of NSW.}
 \format{
-An object of class \code{sf} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 15 rows and 11 columns.
+An object of class \code{sf} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 15 rows and 5 columns.
 }
 \source{
-Spatial Services, Department of Customer Service NSW.
-"MyHospitals_Public",
-\url{https://portal.spatial.nsw.gov.au/portal/home/item.html?id=5a1e5dd9b38245d3b976c21b56fd6185}, accessed 4 May 2023.
-Republished from
 NSW Ministry of Health, "Map of local health districts",
 \url{https://www.health.nsw.gov.au/lhd/Pages/lhd-maps.aspx}.
 
@@ -27,7 +23,7 @@ level of detail.
 }
 \examples{
 library(ggplot2)
-ggplot(lhd) + geom_sf(aes(fill = lhd_name), show.legend = FALSE)
+ggplot(lhd) + geom_sf(aes(fill = LHD_NAME), show.legend = FALSE)
 }
 \seealso{
 \link{poa_lhd_concordance}

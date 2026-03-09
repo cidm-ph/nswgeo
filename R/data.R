@@ -116,10 +116,6 @@
 #' level of detail.
 #'
 #' @source
-#'   Spatial Services, Department of Customer Service NSW.
-#'   "MyHospitals_Public",
-#'   \url{https://portal.spatial.nsw.gov.au/portal/home/item.html?id=5a1e5dd9b38245d3b976c21b56fd6185}, accessed 4 May 2023.
-#'   Republished from
 #'   NSW Ministry of Health, "Map of local health districts",
 #'   \url{https://www.health.nsw.gov.au/lhd/Pages/lhd-maps.aspx}.
 #'
@@ -128,7 +124,7 @@
 #' @seealso [poa_lhd_concordance]
 #' @examples
 #' library(ggplot2)
-#' ggplot(lhd) + geom_sf(aes(fill = lhd_name), show.legend = FALSE)
+#' ggplot(lhd) + geom_sf(aes(fill = LHD_NAME), show.legend = FALSE)
 "lhd"
 
 #' Primary Health Network boundaries of New South Wales

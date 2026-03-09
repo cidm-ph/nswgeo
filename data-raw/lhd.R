@@ -1,11 +1,15 @@
-data_path <- "data-raw/MyHospitals_Public/NSW_LHD_Boundaries.shp"
+data_path <- "data-raw/NSW_LHD_Boundaries/SHP No Z value/SAPHARI_Version_LHD_Areas.shp"
 
 if (!file.exists(data_path)) {
-  message("You need to download the source dataset from the NSW Government portal at:")
-  message("https://portal.spatial.nsw.gov.au/portal/home/item.html?id=5a1e5dd9b38245d3b976c21b56fd6185")
-  message("Choose the Esri Shapefile format and disable any filters. You will be emailed a link.")
-  message("Extract the archive to data-raw/MyHospitals_Public/")
-  stop("Raw LHD dataset is missing")
+  zipped_path <- "data-raw/SHP.zip"
+  if (!file.exists(zipped_path)) {
+    message("You need to download the source dataset from NSW Health at:")
+    message("https://www.health.nsw.gov.au/lhd/Pages/lhd-maps.aspx")
+    stop("Raw LHD dataset is missing")
+  }
+
+  unzip(zipped_path, exdir = "data-raw/NSW_LHD_Boundaries")
+  stopifnot(file.exists(data_path))
 }
 
 library(sf)
