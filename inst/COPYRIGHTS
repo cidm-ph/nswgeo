@@ -27,7 +27,8 @@ data/sydney.rda
 
 data/suburbs.rda
   © State of New South Wales (Spatial Services, a business unit of the Department of Customer Service NSW)
-  https://portal.spatial.nsw.gov.au/portal/home/item.html?id=38bdaa10b7cc41a3a19be6eca91f5368
+  https://data.nsw.gov.au/data/dataset/1-44e7072ddb6340d0bdccb410eb8e9846
+  https://portal.spatial.nsw.gov.au/server/rest/services/NSW_Administrative_Boundaries_Theme_multiCRS/FeatureServer/2
   Spatial Services, a division of the Department of Customer Service creates and
   manages Intellectual Property for the Crown in right of New South Wales.
   To the extent that Creative Commons licensing applies, all data and other
