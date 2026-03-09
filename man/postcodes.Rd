@@ -10,7 +10,7 @@ A data frame with 7 columns:
 \item{postcode}{A postal code}
 \item{locality}{A suburb or locality}
 \item{state}{NSW}
-\item{SA2_NAME_2016}{Statistical Area 2 name to assist with disambiguating localities with identical names}
+\item{SA2_NAME_2021}{Statistical Area 2 name to assist with disambiguating localities with identical names}
 \item{special}{Flag indicating this is a post office box, mail distribution centre or other special postal code}
 \item{old}{Flag indicating that this code appears to have been superseded}
 \item{canonical}{The closest canonical postal code, e.g. mapping post office boxes to the main suburb's postal code}
@@ -18,7 +18,7 @@ A data frame with 7 columns:
 }
 \source{
 Matthew Proctor. "Australian Postcodes",
-\url{https://www.matthewproctor.com/australian_postcodes}, accessed 6 February 2023.
+\url{https://www.matthewproctor.com/australian_postcodes}, accessed 5 March 2026.
 
 The original dataset is released to the public domain.
 }

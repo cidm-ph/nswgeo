@@ -85,7 +85,7 @@ postcodes <-
 
 # list some candidate canonical postcodes for each, based on distance
 postcodes$neighbours <- purrr::map(seq_len(nrow(postcodes)), function(i) {
-  close <- dists[i,] < 0.05
+  close <- dists[i, ] < 0.05
   same_loc <- postcodes$locality == postcodes$locality[[i]]
   postcodes$postcode[close & same_loc & !postcodes$special & !postcodes$old]
 })
