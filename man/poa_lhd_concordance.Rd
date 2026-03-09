@@ -5,7 +5,7 @@
 \alias{poa_lhd_concordance}
 \title{Concordance between postal areas and local health districts.}
 \format{
-An object of class \code{data.frame} with 825 rows and 5 columns.
+An object of class \code{data.frame} with 779 rows and 5 columns.
 }
 \source{
 Computed using the same source datasets as \code{lhd} and \code{poa_nsw}.
