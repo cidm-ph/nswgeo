@@ -1,12 +1,18 @@
 gccsa_shapefile <- "data-raw/GCCSA_2021_AUST_SHP_GDA2020/GCCSA_2021_AUST_GDA2020.shp"
 
-if (!file.exists(abs_geopackage)) {
+if (!file.exists(gccsa_shapefile)) {
   # https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3
   message("Downloading the source dataset from the ABS website...")
   asgs_3e_url <- "https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026/access-and-downloads/digital-boundary-files/GCCSA_2021_AUST_SHP_GDA2020.zip"
-  download.file(asgs_3e_url, destfile = "data-raw/GCCSA_2021_AUST_SHP_GDA2020.zip")
+  download.file(
+    asgs_3e_url,
+    destfile = "data-raw/GCCSA_2021_AUST_SHP_GDA2020.zip"
+  )
 
-  unzip("data-raw/GCCSA_2021_AUST_SHP_GDA2020.zip", exdir = "data-raw/GCCSA_2021_AUST_SHP_GDA2020")
+  unzip(
+    "data-raw/GCCSA_2021_AUST_SHP_GDA2020.zip",
+    exdir = "data-raw/GCCSA_2021_AUST_SHP_GDA2020"
+  )
   stopifnot(file.exists(gccsa_shapefile))
 }
 
