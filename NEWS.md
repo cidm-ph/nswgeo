@@ -2,6 +2,7 @@
 
 * Updated suburbs dataset source (fetched from ArcGIS server).
 * Updated postcodes dataset. The new version has uses 2021 ABS boundaries and has some changes in processing.
+* Updated PHN boundaries.
 
 # nswgeo 0.5.1
 

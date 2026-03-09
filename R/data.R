@@ -138,10 +138,13 @@
 #'
 #' @source
 #'   National Recovery and Resilience Agency, "PHN Boundaries used by the NBRA",
-#'   \url{https://data.gov.au/data/dataset/phn-boundaries-used-by-the-nbra}, accessed 25 May 2023.
+#'   \url{https://data.gov.au/data/dataset/phn-boundaries-used-by-the-nbra}, accessed 9 March 2026.
 #'
 #'   The original dataset is published under the [Creative Commons Attribution 2.5 Australia](https://creativecommons.org/licenses/by/2.5/au/) licence,
-#'   © Commonwealth of Australia 2021.
+#'   © Commonwealth of Australia 2025.
+#' @examples
+#' library(ggplot2)
+#' ggplot(phn) + geom_sf(aes(fill = PHN_NAME), show.legend = FALSE)
 "phn"
 
 #' Concordance between postal areas and local health districts.
@@ -202,7 +205,7 @@
 #'   \item{postcode}{A postal code}
 #'   \item{locality}{A suburb or locality}
 #'   \item{state}{NSW}
-#'   \item{SA2_NAME_2016}{Statistical Area 2 name to assist with disambiguating localities with identical names}
+#'   \item{SA2_NAME_2021}{Statistical Area 2 name to assist with disambiguating localities with identical names}
 #'   \item{special}{Flag indicating this is a post office box, mail distribution centre or other special postal code}
 #'   \item{old}{Flag indicating that this code appears to have been superseded}
 #'   \item{canonical}{The closest canonical postal code, e.g. mapping post office boxes to the main suburb's postal code}
@@ -210,7 +213,7 @@
 #'
 #' @source
 #'   Matthew Proctor. "Australian Postcodes",
-#'   \url{https://www.matthewproctor.com/australian_postcodes}, accessed 6 February 2023.
+#'   \url{https://www.matthewproctor.com/australian_postcodes}, accessed 5 March 2026.
 #'
 #'   The original dataset is released to the public domain.
 "postcodes"

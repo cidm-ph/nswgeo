@@ -9,10 +9,10 @@ An object of class \code{sf} (inherits from \code{tbl_df}, \code{tbl}, \code{dat
 }
 \source{
 National Recovery and Resilience Agency, "PHN Boundaries used by the NBRA",
-\url{https://data.gov.au/data/dataset/phn-boundaries-used-by-the-nbra}, accessed 25 May 2023.
+\url{https://data.gov.au/data/dataset/phn-boundaries-used-by-the-nbra}, accessed 9 March 2026.
 
 The original dataset is published under the \href{https://creativecommons.org/licenses/by/2.5/au/}{Creative Commons Attribution 2.5 Australia} licence,
-© Commonwealth of Australia 2021.
+© Commonwealth of Australia 2025.
 }
 \usage{
 phn
@@ -20,5 +20,9 @@ phn
 \description{
 The geometries have been simplified with a tolerance of 500 m to reduce the
 level of detail.
+}
+\examples{
+library(ggplot2)
+ggplot(phn) + geom_sf(aes(fill = PHN_NAME), show.legend = FALSE)
 }
 \keyword{datasets}
