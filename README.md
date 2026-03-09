@@ -64,12 +64,12 @@ head(covid_cases_nsw)
 #> # A tibble: 6 × 5
 #>   postcode lga       lhd                 year type 
 #>   <chr>    <chr>     <chr>              <int> <chr>
-#> 1 2427     Mid-Coast Hunter New England  2022 B    
+#> 1 2428     Mid-Coast Hunter New England  2022 A    
 #> 2 2761     Blacktown Western Sydney      2021 A    
 #> 3 2426     Mid-Coast Hunter New England  2022 B    
-#> 4 2148     Blacktown Western Sydney      2022 B    
-#> 5 2768     Blacktown Western Sydney      2021 A    
-#> 6 2766     Blacktown Western Sydney      2021 B
+#> 4 2324     Mid-Coast Hunter New England  2022 B    
+#> 5 2767     Blacktown Western Sydney      2021 A    
+#> 6 2427     Mid-Coast Hunter New England  2022 A
 
 covid_cases_nsw |>
   dplyr::count(lga) |>
