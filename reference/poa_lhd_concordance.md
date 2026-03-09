@@ -12,7 +12,7 @@ poa_lhd_concordance
 
 ## Format
 
-An object of class `data.frame` with 825 rows and 5 columns.
+An object of class `data.frame` with 779 rows and 5 columns.
 
 ## Source
 
@@ -61,36 +61,36 @@ library(dplyr)
 
 # postcodes that overlap with Murrumbidgee LHD
 poa_lhd_concordance |>
-  filter(lhd_name == "Murrumbidgee", FRAC_INCLUDED > 0.005) |>
+  filter(LHD_NAME == "Murrumbidgee Local Health District", FRAC_INCLUDED > 0.005) |>
   arrange(desc(FRAC_INCLUDED)) |>
   pull(POA_NAME_2021)
-#>  [1] "2644" "2646" "2649" "2653" "2659" "2660" "2712" "2713" "2643" "2645"
-#> [11] "2647" "2650" "2651" "2655" "2656" "2658" "2661" "2710" "2716" "2729"
-#> [21] "2730" "2731" "2732" "2590" "2663" "2678" "2700" "2701" "2702" "2707"
-#> [31] "2722" "2726" "2733" "2734" "2735" "2587" "2588" "2652" "2665" "2680"
-#> [41] "2703" "2705" "2706" "2725" "2666" "2668" "2681" "2586" "2669" "2714"
-#> [51] "2727" "2720" "2675" "2803" "2585" "2736" "2642" "2672" "2594" "2671"
-#> [61] "2640" "2711" "2721" "2808" "2611" "3644" "2807" "2629" "2627" "2794"
-#> [71] "2582" "2878" "2583" "3707" "2715"
+#>  [1] "2585" "2587" "2588" "2590" "2640" "2641" "2642" "2643" "2644" "2645"
+#> [11] "2646" "2647" "2649" "2650" "2651" "2652" "2653" "2655" "2656" "2658"
+#> [21] "2659" "2660" "2661" "2663" "2665" "2666" "2668" "2669" "2678" "2680"
+#> [31] "2681" "2700" "2701" "2702" "2703" "2705" "2706" "2707" "2710" "2712"
+#> [41] "2713" "2714" "2716" "2720" "2722" "2725" "2726" "2727" "2729" "2730"
+#> [51] "2731" "2732" "2733" "2734" "2735" "2736" "2803" "2586" "2675" "2672"
+#> [61] "2594" "2671" "2711" "2721" "2808" "2611" "3644" "2807" "2629" "2627"
+#> [71] "2794" "2582" "2878" "2583" "3707" "2715" "3691"
 
 # extract the main LHD for each postcode
 poa_lhd_concordance |>
   arrange(desc(FRAC_INCLUDED)) |>
   slice_head(n = 1, by = POA_NAME_2021) |>
-  mutate(postcode = POA_NAME_2021, lhd = lhd_name, .keep = "none") |>
+  mutate(postcode = POA_NAME_2021, lhd = LHD_NAME, .keep = "none") |>
   as_tibble()
-#> # A tibble: 671 × 2
-#>    postcode lhd         
-#>    <chr>    <chr>       
-#>  1 2549     Southern NSW
-#>  2 2632     Southern NSW
-#>  3 2548     Southern NSW
-#>  4 2550     Southern NSW
-#>  5 2551     Southern NSW
-#>  6 2625     Southern NSW
-#>  7 2631     Southern NSW
-#>  8 2545     Southern NSW
-#>  9 2546     Southern NSW
-#> 10 2630     Southern NSW
-#> # ℹ 661 more rows
+#> # A tibble: 646 × 2
+#>    postcode lhd                                       
+#>    <chr>    <chr>                                     
+#>  1 2016     Sydney Local Health District              
+#>  2 2019     South Eastern Sydney Local Health District
+#>  3 2021     South Eastern Sydney Local Health District
+#>  4 2022     South Eastern Sydney Local Health District
+#>  5 2023     South Eastern Sydney Local Health District
+#>  6 2025     South Eastern Sydney Local Health District
+#>  7 2031     South Eastern Sydney Local Health District
+#>  8 2032     South Eastern Sydney Local Health District
+#>  9 2033     South Eastern Sydney Local Health District
+#> 10 2035     South Eastern Sydney Local Health District
+#> # ℹ 636 more rows
 ```

@@ -33,14 +33,14 @@ An object of class `sfc_POLYGON` (inherits from `sfc`) of length 1.
 ## Source
 
 Australian Bureau of Statistics. "Australian Statistical Geography
-Standard (ASGS) Edition 3." ABS, Jul2021-Jun2026 (24 July 2024 update),
+Standard (ASGS) Edition 3." ABS, Jul2021-Jun2026 (2025 update),
 <https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026>,
-accessed 29 July 2024.
+accessed 9 March 2026.
 
 The original dataset is published under the [Creative Commons
 Attribution 4.0
 International](https://creativecommons.org/licenses/by/4.0/) licence, ©
-Commonwealth of Australia 2021.
+Commonwealth of Australia 2021-2025.
 
 ## Details
 
@@ -70,3 +70,15 @@ resolution. `sydney` is simplified with a 500 m tolerance.
 ## See also
 
 [`outline()`](https://cidm-ph.github.io/nswgeo/reference/outline.md)
+
+## Examples
+
+``` r
+library(ggplot2)
+ggplot() +
+  geom_sf(fill = "black", data = nsw) +
+  geom_sf(fill = "red", data = act) +
+  geom_sf(fill = "blue", data = lhi) +
+  geom_sf(fill = "green", data = jbt) +
+  geom_sf(fill = "cyan", data = sydney)
+```

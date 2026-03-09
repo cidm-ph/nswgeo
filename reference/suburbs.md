@@ -27,7 +27,7 @@ A data frame with 2 columns:
 Spatial Services, Department of Customer Service NSW. "NSW
 Administrative Boundaries Theme - Suburb."
 <https://portal.spatial.nsw.gov.au/server/rest/services/NSW_Administrative_Boundaries_Theme_multiCRS/FeatureServer/2>,
-accessed 05 March 2026.
+accessed 5 March 2026.
 
 The original dataset is published under the [Creative Commons
 Attribution 4.0

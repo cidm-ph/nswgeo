@@ -6,7 +6,12 @@
 - Updated postcodes dataset. The new version has uses 2021 ABS
   boundaries and has some changes in processing.
 - Updated PHN boundaries.
-- Updated LHD boundaries to use new official data source.
+- Updated LHD boundaries to use new official data source. Note
+  `lhd_name` is now `LHD_NAME` and includes the string
+  `"Local Health District"` at the end of each.
+- Updated to 2025 ASGS release.
+- Update postcode-LHD concordance. Note that the `LHD_NAME` column has
+  changed as with LHD boundaries.
 
 ## nswgeo 0.5.1
 
