@@ -6,17 +6,25 @@ if (!file.exists(data_path)) {
   download.file(cases_url, destfile = data_path)
 }
 
-location_agg <- readr::read_csv(data_path)
-
 set.seed(202210)
 
-covid_cases_nsw <- location_agg |>
-  transmute(
+covid_cases_nsw <-
+  readr::read_csv(
+    data_path,
+    col_select = c(
+      "postcode",
+      "lga_name19",
+      "lhd_2010_name",
+      "notification_date"
+    )
+  ) |>
+  mutate(
     postcode,
     lga = stringr::str_remove(lga_name19, " \\(.*\\)$"),
     lhd = lhd_2010_name,
     year = as.integer(format(notification_date, "%Y")),
     type = c("A", "B")[as.integer(format(notification_date, "%m")) %% 2 + 1],
+    .keep = "none"
   ) |>
   filter(lga %in% c("Walgett", "Mid-Coast", "Blacktown")) |>
   slice_sample(n = 100)
