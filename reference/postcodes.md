@@ -26,7 +26,7 @@ A data frame with 7 columns:
 
   NSW
 
-- SA2_NAME_2016:
+- SA2_NAME_2021:
 
   Statistical Area 2 name to assist with disambiguating localities with
   identical names
@@ -48,8 +48,8 @@ A data frame with 7 columns:
 ## Source
 
 Matthew Proctor. "Australian Postcodes",
-<https://www.matthewproctor.com/australian_postcodes>, accessed 6
-February 2023.
+<https://www.matthewproctor.com/australian_postcodes>, accessed 5 March
+2026.
 
 The original dataset is released to the public domain.
 
