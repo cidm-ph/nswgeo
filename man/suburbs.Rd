@@ -14,7 +14,7 @@ A data frame with 2 columns:
 \source{
 Spatial Services, Department of Customer Service NSW.
 "NSW Administrative Boundaries Theme - Suburb."
-\url{https://portal.spatial.nsw.gov.au/server/rest/services/NSW_Administrative_Boundaries_Theme_multiCRS/FeatureServer/2}, accessed 05 March 2026.
+\url{https://portal.spatial.nsw.gov.au/server/rest/services/NSW_Administrative_Boundaries_Theme_multiCRS/FeatureServer/2}, accessed 5 March 2026.
 
 The original dataset is published under the \href{https://creativecommons.org/licenses/by/4.0/}{Creative Commons Attribution 4.0 International} licence,
 © State of New South Wales (\href{https://www.spatial.nsw.gov.au/copyright}{Spatial Services}, a business unit of the Department of Customer Service NSW).

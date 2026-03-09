@@ -1,18 +1,20 @@
-abs_geopackage_name <- "ASGS_Ed3_Non_ABS_Structures_GDA2020_GPKG_updated_2024"
-abs_geopackage_gpkg <- "ASGS_Ed3_Non_ABS_Structures_GDA2020_updated_2024.gpkg"
+abs_geopackage_name <- "ASGS_Ed3_Non_ABS_Structures_GDA2020_GPKG_updated_2025"
+abs_geopackage_gpkg <- "ASGS_Ed3_Non_ABS_Structures_GDA2020_updated_2025.gpkg"
 abs_geopackage <- file.path("data-raw", abs_geopackage_name, abs_geopackage_gpkg)
 asgs_3e_url <-
-  "https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026/access-and-downloads/digital-boundary-files/ASGS_Ed3_Non_ABS_Structures_GDA2020_updated_2024.zip"
+  "https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026/access-and-downloads/digital-boundary-files/ASGS_Ed3_Non_ABS_Structures_GDA2020_updated_2025.zip"
 
 if (!file.exists(abs_geopackage)) {
-  # https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026/access-and-downloads/digital-boundary-files
-  message("Downloading the source dataset from the ABS website...")
-  abs_geopackage_path <- file.path("data-raw", paste0(abs_geopackage_name, ".zip"))
-  httr2::request(asgs_3e_url) |>
-    httr2::req_progress() |>
-    httr2::req_retry(max_tries = 3) |>
-    httr2::req_options(http_version = 0, timeout = 2000L) |>
-    httr2::req_perform(path = abs_geopackage_path)
+    abs_geopackage_path <- file.path(
+      "data-raw",
+      paste0(abs_geopackage_name, ".zip")
+    )
+    message("Downloading the source dataset from the ABS website...")
+    httr2::request(asgs_3e_url) |>
+      httr2::req_progress() |>
+      httr2::req_retry(max_tries = 3) |>
+      httr2::req_options(http_version = 0, timeout = 2000L) |>
+      httr2::req_perform(path = abs_geopackage_path)
 
   unzip(abs_geopackage_path, exdir = file.path("data-raw", abs_geopackage_name))
   stopifnot(file.exists(abs_geopackage))

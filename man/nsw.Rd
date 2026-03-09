@@ -20,10 +20,10 @@ An object of class \code{sfc_MULTIPOLYGON} (inherits from \code{sfc}) of length 
 An object of class \code{sfc_POLYGON} (inherits from \code{sfc}) of length 1.
 }
 \source{
-Australian Bureau of Statistics. "Australian Statistical Geography Standard (ASGS) Edition 3." ABS, Jul2021-Jun2026 (24 July 2024 update),
-\url{https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026}, accessed 29 July 2024.
+Australian Bureau of Statistics. "Australian Statistical Geography Standard (ASGS) Edition 3." ABS, Jul2021-Jun2026 (2025 update),
+\url{https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026}, accessed 9 March 2026.
 
-The original dataset is published under the \href{https://creativecommons.org/licenses/by/4.0/}{Creative Commons Attribution 4.0 International} licence, © Commonwealth of Australia 2021.
+The original dataset is published under the \href{https://creativecommons.org/licenses/by/4.0/}{Creative Commons Attribution 4.0 International} licence, © Commonwealth of Australia 2021-2025.
 }
 \usage{
 nsw
@@ -63,6 +63,15 @@ resolution. \code{sydney} is simplified with a 500 m tolerance.
 \item \code{sydney}: Greater Sydney boundary.
 
 }}
+\examples{
+library(ggplot2)
+ggplot() +
+  geom_sf(fill = "black", data = nsw) +
+  geom_sf(fill = "red", data = act) +
+  geom_sf(fill = "blue", data = lhi) +
+  geom_sf(fill = "green", data = jbt) +
+  geom_sf(fill = "cyan", data = sydney)
+}
 \seealso{
 \code{\link[=outline]{outline()}}
 }

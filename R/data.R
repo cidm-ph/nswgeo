@@ -11,7 +11,7 @@
 #' @source
 #'   Spatial Services, Department of Customer Service NSW.
 #'   "NSW Administrative Boundaries Theme - Suburb."
-#'   \url{https://portal.spatial.nsw.gov.au/server/rest/services/NSW_Administrative_Boundaries_Theme_multiCRS/FeatureServer/2}, accessed 05 March 2026.
+#'   \url{https://portal.spatial.nsw.gov.au/server/rest/services/NSW_Administrative_Boundaries_Theme_multiCRS/FeatureServer/2}, accessed 5 March 2026.
 #'
 #'   The original dataset is published under the [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) licence,
 #'   © State of New South Wales ([Spatial Services](https://www.spatial.nsw.gov.au/copyright), a business unit of the Department of Customer Service NSW).
@@ -28,10 +28,10 @@
 #' library(ggplot2)
 #' ggplot(states) + geom_sf(aes(fill = STE_NAME21))
 #' @source
-#'   Australian Bureau of Statistics. "Australian Statistical Geography Standard (ASGS) Edition 3." ABS, Jul2021-Jun2026,
-#'   \url{https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026}, accessed 10 November 2022.
+#'   Australian Bureau of Statistics. "Australian Statistical Geography Standard (ASGS) Edition 3." ABS, Jul2021-Jun2026 (2025 update),
+#'   \url{https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026}, accessed 9 March 2026.
 #'
-#'   The original dataset is published under the [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) licence, © Commonwealth of Australia 2021.
+#'   The original dataset is published under the [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) licence, © Commonwealth of Australia 2021-2025.
 #' @describeIn australia External boundaries of Australia as a multipolygon.
 "australia"
 #' @describeIn australia State and internal territory boundaries of Australia.
@@ -53,10 +53,18 @@
 #'
 #' @seealso [outline()]
 #' @source
-#'   Australian Bureau of Statistics. "Australian Statistical Geography Standard (ASGS) Edition 3." ABS, Jul2021-Jun2026 (24 July 2024 update),
-#'   \url{https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026}, accessed 29 July 2024.
+#'   Australian Bureau of Statistics. "Australian Statistical Geography Standard (ASGS) Edition 3." ABS, Jul2021-Jun2026 (2025 update),
+#'   \url{https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026}, accessed 9 March 2026.
 #'
-#'   The original dataset is published under the [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) licence, © Commonwealth of Australia 2021.
+#'   The original dataset is published under the [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) licence, © Commonwealth of Australia 2021-2025.
+#' @examples
+#' library(ggplot2)
+#' ggplot() +
+#'   geom_sf(fill = "black", data = nsw) +
+#'   geom_sf(fill = "red", data = act) +
+#'   geom_sf(fill = "blue", data = lhi) +
+#'   geom_sf(fill = "green", data = jbt) +
+#'   geom_sf(fill = "cyan", data = sydney)
 #' @describeIn nsw External state boundary excluding LHI but including ACT and JBT.
 "nsw"
 #' @describeIn nsw Australian Capital Territory boundary.
@@ -101,10 +109,10 @@
 #'   scale_fill_viridis_b("Postal area", option = "H") +
 #'   theme_void()
 #' @source
-#'   Australian Bureau of Statistics. "Australian Statistical Geography Standard (ASGS) Edition 3." ABS, Jul2021-Jun2026 (24 July 2024 update),
-#'   \url{https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026}, accessed 29 July 2024.
+#'   Australian Bureau of Statistics. "Australian Statistical Geography Standard (ASGS) Edition 3." ABS, Jul2021-Jun2026 (2025 update),
+#'   \url{https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026}, accessed 9 March 2026.
 #'
-#'   The original dataset is published under the [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) licence, © Commonwealth of Australia 2021.
+#'   The original dataset is published under the [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) licence, © Commonwealth of Australia 2021-2025.
 #' @describeIn nsw_admin Local Government Area boundaries of New South Wales.
 "lga_nsw"
 #' @describeIn nsw_admin [Postal area](https://www.abs.gov.au/ausstats/abs@.nsf/Lookup/by%20Subject/1270.0.55.003~July%202016~Main%20Features~Postal%20Areas%20(POA)~8) boundaries of New South Wales.

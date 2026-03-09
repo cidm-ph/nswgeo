@@ -11,10 +11,10 @@ An object of class \code{sfc_MULTIPOLYGON} (inherits from \code{sfc}) of length 
 An object of class \code{sf} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 8 rows and 9 columns.
 }
 \source{
-Australian Bureau of Statistics. "Australian Statistical Geography Standard (ASGS) Edition 3." ABS, Jul2021-Jun2026,
-\url{https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026}, accessed 10 November 2022.
+Australian Bureau of Statistics. "Australian Statistical Geography Standard (ASGS) Edition 3." ABS, Jul2021-Jun2026 (2025 update),
+\url{https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026}, accessed 9 March 2026.
 
-The original dataset is published under the \href{https://creativecommons.org/licenses/by/4.0/}{Creative Commons Attribution 4.0 International} licence, © Commonwealth of Australia 2021.
+The original dataset is published under the \href{https://creativecommons.org/licenses/by/4.0/}{Creative Commons Attribution 4.0 International} licence, © Commonwealth of Australia 2021-2025.
 }
 \usage{
 australia

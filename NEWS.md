@@ -4,6 +4,7 @@
 * Updated postcodes dataset. The new version has uses 2021 ABS boundaries and has some changes in processing.
 * Updated PHN boundaries.
 * Updated LHD boundaries to use new official data source.
+* Updated to 2025 ASGS release.
 
 # nswgeo 0.5.1
 
