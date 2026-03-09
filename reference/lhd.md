@@ -12,15 +12,11 @@ lhd
 ## Format
 
 An object of class `sf` (inherits from `tbl_df`, `tbl`, `data.frame`)
-with 15 rows and 11 columns.
+with 15 rows and 5 columns.
 
 ## Source
 
-Spatial Services, Department of Customer Service NSW.
-"MyHospitals_Public",
-<https://portal.spatial.nsw.gov.au/portal/home/item.html?id=5a1e5dd9b38245d3b976c21b56fd6185>,
-accessed 4 May 2023. Republished from NSW Ministry of Health, "Map of
-local health districts",
+NSW Ministry of Health, "Map of local health districts",
 <https://www.health.nsw.gov.au/lhd/Pages/lhd-maps.aspx>.
 
 The original dataset is published under the [Creative Commons
@@ -37,5 +33,5 @@ information go to <https://www.health.nsw.gov.au>.
 
 ``` r
 library(ggplot2)
-ggplot(lhd) + geom_sf(aes(fill = lhd_name), show.legend = FALSE)
+ggplot(lhd) + geom_sf(aes(fill = LHD_NAME), show.legend = FALSE)
 ```
