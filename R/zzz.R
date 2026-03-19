@@ -3,7 +3,14 @@
     "nswgeo.lhd",
     nswgeo::lhd,
     feature_column = "LHD_NAME",
-    outline = sf::st_sf(geometry = lhd_outline)
+    outline = sf::st_sf(geometry = lhd_outline),
+    aliases = stats::setNames(
+      rep(nswgeo::lhd$LHD_NAME, 2),
+      c(
+        sub(" Local Health District$", "", nswgeo::lhd$LHD_NAME),
+        sub(" Local Health District$", " LHD", nswgeo::lhd$LHD_NAME)
+      )
+    )
   )
   cartographer::register_map(
     "nswgeo.lga", nswgeo::lga_nsw,

@@ -31,7 +31,9 @@ Suggests:
     httr2,
     nngeo,
     readr,
-    stringr
+    stringr,
+    testthat (>= 3.0.0)
 URL: https://github.com/cidm-ph/nswgeo,
     https://cidm-ph.github.io/nswgeo/
 BugReports: https://github.com/cidm-ph/nswgeo/issues
+Config/testthat/edition: 3
