@@ -1,4 +1,4 @@
-This is a targeted update to fix CRAN issues.
+Dataset updates.
 
 ## R CMD check results
 
