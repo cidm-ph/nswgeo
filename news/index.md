@@ -3,13 +3,13 @@
 ## nswgeo (development version)
 
 - Updated suburbs dataset source (fetched from ArcGIS server).
-- Updated postcodes dataset. The new version has uses 2021 ABS
-  boundaries and has some changes in processing.
+- Updated postcodes dataset. The new version uses 2021 ABS boundaries
+  and has some changes in processing.
 - Updated PHN boundaries.
 - Updated LHD boundaries to use new official data source. Note
   `lhd_name` now includes the string `"Local Health District"` at the
   end of each. If using {cartographer}, the old names will continue to
-  work due to registration.
+  work as the registration provides aliases for compatibility.
 - Update postcode-LHD concordance. Note that the `lhd_name` column has
   changed as with LHD boundaries. The precision of `FRAC_INCLUDED` has
   been reduced.
