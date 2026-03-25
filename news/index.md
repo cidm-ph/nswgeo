@@ -7,11 +7,12 @@
   boundaries and has some changes in processing.
 - Updated PHN boundaries.
 - Updated LHD boundaries to use new official data source. Note
-  `lhd_name` is now `LHD_NAME` and includes the string
-  `"Local Health District"` at the end of each.
-- Updated to 2025 ASGS release.
-- Update postcode-LHD concordance. Note that the `LHD_NAME` column has
-  changed as with LHD boundaries.
+  `lhd_name` now includes the string `"Local Health District"` at the
+  end of each. If using {cartographer}, the old names will continue to
+  work due to registration.
+- Update postcode-LHD concordance. Note that the `lhd_name` column has
+  changed as with LHD boundaries. The precision of `FRAC_INCLUDED` has
+  been reduced.
 
 ## nswgeo 0.5.1
 
