@@ -32,7 +32,8 @@ lhd <- lhd_boundaries |>
   select(-all_of(na_cols)) |>
   st_transform(crs_working) |>
   st_simplify(dTolerance = tolerance_m) |>
-  st_transform(crs_nsw)
+  st_transform(crs_nsw) |>
+  rename(lhd_name = LHD_NAME)
 object.size(lhd)
 
 usethis::use_data(lhd, overwrite = TRUE)

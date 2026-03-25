@@ -132,7 +132,7 @@
 #' @seealso [poa_lhd_concordance]
 #' @examples
 #' library(ggplot2)
-#' ggplot(lhd) + geom_sf(aes(fill = LHD_NAME), show.legend = FALSE)
+#' ggplot(lhd) + geom_sf(aes(fill = lhd_name), show.legend = FALSE)
 "lhd"
 
 #' Primary Health Network boundaries of New South Wales
@@ -183,7 +183,7 @@
 #'
 #' # postcodes that overlap with Murrumbidgee LHD
 #' poa_lhd_concordance |>
-#'   filter(LHD_NAME == "Murrumbidgee Local Health District", FRAC_INCLUDED > 0.005) |>
+#'   filter(lhd_name == "Murrumbidgee Local Health District", FRAC_INCLUDED > 0.005) |>
 #'   arrange(desc(FRAC_INCLUDED)) |>
 #'   pull(POA_NAME_2021)
 #'
@@ -191,7 +191,7 @@
 #' poa_lhd_concordance |>
 #'   arrange(desc(FRAC_INCLUDED)) |>
 #'   slice_head(n = 1, by = POA_NAME_2021) |>
-#'   mutate(postcode = POA_NAME_2021, lhd = LHD_NAME, .keep = "none") |>
+#'   mutate(postcode = POA_NAME_2021, lhd = lhd_name, .keep = "none") |>
 #'   as_tibble()
 "poa_lhd_concordance"
 

@@ -23,7 +23,7 @@ level of detail.
 }
 \examples{
 library(ggplot2)
-ggplot(lhd) + geom_sf(aes(fill = LHD_NAME), show.legend = FALSE)
+ggplot(lhd) + geom_sf(aes(fill = lhd_name), show.legend = FALSE)
 }
 \seealso{
 \link{poa_lhd_concordance}

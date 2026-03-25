@@ -5,7 +5,7 @@
 \alias{poa_lhd_concordance}
 \title{Concordance between postal areas and local health districts.}
 \format{
-An object of class \code{data.frame} with 779 rows and 5 columns.
+An object of class \code{data.frame} with 778 rows and 5 columns.
 }
 \source{
 Computed using the same source datasets as \code{lhd} and \code{poa_nsw}.
@@ -45,7 +45,7 @@ library(dplyr)
 
 # postcodes that overlap with Murrumbidgee LHD
 poa_lhd_concordance |>
-  filter(LHD_NAME == "Murrumbidgee Local Health District", FRAC_INCLUDED > 0.005) |>
+  filter(lhd_name == "Murrumbidgee Local Health District", FRAC_INCLUDED > 0.005) |>
   arrange(desc(FRAC_INCLUDED)) |>
   pull(POA_NAME_2021)
 
@@ -53,7 +53,7 @@ poa_lhd_concordance |>
 poa_lhd_concordance |>
   arrange(desc(FRAC_INCLUDED)) |>
   slice_head(n = 1, by = POA_NAME_2021) |>
-  mutate(postcode = POA_NAME_2021, lhd = LHD_NAME, .keep = "none") |>
+  mutate(postcode = POA_NAME_2021, lhd = lhd_name, .keep = "none") |>
   as_tibble()
 }
 \keyword{datasets}
