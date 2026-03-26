@@ -1,3 +1,5 @@
+# nswgeo (development version)
+
 # nswgeo 0.6.0
 
 * Updated suburbs dataset source (fetched from ArcGIS server).
