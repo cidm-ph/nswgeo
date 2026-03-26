@@ -1,6 +1,8 @@
 # Changelog
 
-## nswgeo (development version)
+## nswgeo 0.6.0
+
+CRAN release: 2026-03-26
 
 - Updated suburbs dataset source (fetched from ArcGIS server).
 - Updated postcodes dataset. The new version uses 2021 ABS boundaries
